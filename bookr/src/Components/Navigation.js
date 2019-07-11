@@ -4,16 +4,12 @@ import '../App.css';
 
 const Navigation = () => {
   return(
-    <div className="header">
-      <img src={logo} alt="Logo" />
-
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">About us</a>
-        <a href="#">Sign in</a>
-        <a href="#">Get started</a>
-      </nav>
-    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About us</a>
+      <a href="#">Sign in</a>
+      <a href="#">Get started</a>
+    </nav>
   )
 };
 
