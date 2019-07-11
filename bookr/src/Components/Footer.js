@@ -1,11 +1,15 @@
 import React from 'react';
 import Navigation from './Navigation';
+import Credits from './Credits';
 
 const Footer = () => {
   return(
-    <footer>
-      <Navigation />
-    </footer>
+    <div>
+      <footer>
+        <Navigation />
+      </footer>
+      <Credits />
+    </div>
   )
 }
 
