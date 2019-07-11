@@ -76,7 +76,6 @@ class BookCarousel extends Component {
 
     return (
       <Carousel
-        style={'backgroundColor: black'}
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
