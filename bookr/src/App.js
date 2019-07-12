@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import CollectionItem from './Components/CollectionItem';
+import CollectionItemContainer from './Components/CollectionItemContainer';
 
 function App() {
   return (
@@ -10,12 +11,8 @@ function App() {
       <Header />
       <h1>Welcome to Bookr!</h1>
       <p>The place for all your book rating needs</p>
-
-      <div className="collection-item-container">
-        <CollectionItem />
-        <CollectionItem />
-        <CollectionItem />
-      </div>
+      
+      <CollectionItemContainer />
 
       <Footer />
     </div>
