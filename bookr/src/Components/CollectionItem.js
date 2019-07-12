@@ -1,7 +1,9 @@
 import React from 'react';
-import { Star, Coffee } from 'react-feather';
+import { Star } from 'react-feather';
 
 const CollectionItem = props => {
+  const ratingStars = Array(5).fill(false).fill(true, 0, props.book.rating)
+
   return(
     <div className="collection-item">
       <img className="collection-item__cover"
@@ -17,7 +19,8 @@ const CollectionItem = props => {
         </div>
 
         <div className="collection-item__rating">
-          Avg. Rating: <Star />  <Star /> <Star /> <Star />
+          Avg. Rating: 
+          { ratingStars.map(item => item ? <Star color="red" fill="red" /> : <Star color="red" />) }
         </div>
       </div>
     </div>
