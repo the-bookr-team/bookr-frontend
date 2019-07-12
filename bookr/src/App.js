@@ -5,8 +5,11 @@ import Footer from './Components/Footer';
 import CollectionItem from './Components/CollectionItem';
 import CollectionItemContainer from './Components/CollectionItemContainer';
 
+
+
 function App() {
   return (
+
     <div className="App">
       <Header />
       <h1>Welcome to Bookr!</h1>

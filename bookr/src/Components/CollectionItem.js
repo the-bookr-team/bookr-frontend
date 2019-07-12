@@ -1,20 +1,20 @@
 import React from 'react';
 import { Star } from 'react-feather';
 
-const CollectionItem = () => {
+const CollectionItem = props => {
   return(
     <div className="collection-item">
       <img className="collection-item__cover"
-        src="https://m.media-amazon.com/images/I/81wrqVLMYqL._AC_UL436_.jpg"
-        alt="Spilled Milk"
+        src={props.book.book_img}
+        alt={props.book.title}
       />
 
       <div className="collection-item__details">
-        <h3>Spilled Milk: Based On A True Story</h3>
+        <h3>{props.book.title}</h3>
 
         <div className="collection-item__author">
-          K.L Randis &middot;
-          K.L Randis (June 7, 2013)
+          { props.book.author } &middot;
+          { props.book.publisher} 
         </div>
 
         <div className="collection-item__rating">
