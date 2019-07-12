@@ -54,3 +54,8 @@ footer nav a:hover {
   font-size: .9rem;
   font-style: italic;
 }
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: black;
+}
