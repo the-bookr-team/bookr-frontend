@@ -8,16 +8,8 @@ import Book from './Components/Book';
 function App() {
   return (
     <div className="App">
-      <Header />
-
       <h1>Welcome to Bookr!</h1>
       <p>The place for all your book rating needs</p>
-
-      <CollectionItemContainer />
-
-      <Book />
-
-      <Footer />
     </div>
 
   );
