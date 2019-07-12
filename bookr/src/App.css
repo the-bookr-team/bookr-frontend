@@ -1,3 +1,6 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
 .App {
   text-align: center;
 }
@@ -32,7 +35,18 @@
   }
 }
 
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-  background-color: black;
+.carousel-wrapper {
+  align-self: center;
+  max-width: 65rem;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  background-color: #282c34;
+}
+
+.slick-slide {
+  opacity: 0.2;
+}
+
+.slick-slide.slick-active.slick-current {
+  opacity: 1;
 }
