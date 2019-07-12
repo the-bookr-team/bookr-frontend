@@ -58,6 +58,9 @@ footer nav a:hover {
 .collection-item-container {
   background-color: white;
   padding: 20px 50px;
+  box-shadow: 0 0 16px lightgrey;
+  width: 90%;
+  margin: auto;
 }
 
 .collection-item {
@@ -65,7 +68,7 @@ footer nav a:hover {
   align-items: center;
   font-size: 24px;
   padding: 20px 0;
-  width: 90%;
+  width: 95%;
   border-bottom: 1px solid #E5E5E5;
   margin: auto;
 }

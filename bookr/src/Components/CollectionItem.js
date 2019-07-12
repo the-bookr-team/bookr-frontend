@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star } from 'react-feather';
+import { Star, Coffee } from 'react-feather';
 
 const CollectionItem = props => {
   return(
@@ -17,7 +17,7 @@ const CollectionItem = props => {
         </div>
 
         <div className="collection-item__rating">
-          Avg. Rating: <Star /><Star /><Star /><Star />
+          Avg. Rating: <Star />  <Star /> <Star /> <Star />
         </div>
       </div>
     </div>
