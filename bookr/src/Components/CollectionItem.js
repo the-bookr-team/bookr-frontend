@@ -13,7 +13,7 @@ const CollectionItem = props => {
         <h3>{props.book.title}</h3>
 
         <div className="collection-item__author">
-          { props.book.author } &middot; { props.book.publisher} 
+          {props.book.author} &middot; {props.book.publisher} 
         </div>
 
         <div className="collection-item__rating">
