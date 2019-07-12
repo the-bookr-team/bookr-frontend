@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import CollectionItemContainer from './Components/CollectionItemContainer';
+import Book from './Components/Book';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       <p>The place for all your book rating needs</p>
 
       <CollectionItemContainer />
+
+      <Book />
+
       <Footer />
     </div>
 
