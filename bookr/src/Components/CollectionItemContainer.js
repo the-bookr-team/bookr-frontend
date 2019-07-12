@@ -38,7 +38,7 @@ const books = [
 
 const CollectionItemContainer = () => {
   return(
-    <div className="collection-item-container">
+    <div className="page-container">
       {books.map(book => <CollectionItem book={book} key={book.id} />)}
     </div>
   )

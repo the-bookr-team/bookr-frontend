@@ -59,12 +59,12 @@ footer nav a:hover {
   font-style: italic;
 }
 
-.collection-item-container {
+.page-container {
   background-color: white;
   padding: 20px 50px;
   box-shadow: 0 0 16px lightgrey;
   width: 90%;
-  margin: auto;
+  margin: 0 auto 4rem;
 }
 
 .collection-item {
