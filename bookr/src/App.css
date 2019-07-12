@@ -37,7 +37,7 @@
 
 .carousel-wrapper {
   align-self: center;
-  max-width: 65rem;
+  max-width: 90rem;
   margin: 0 auto;
   padding-top: 0.5rem;
   background-color: #282c34;
@@ -49,4 +49,9 @@
 
 .slick-slide.slick-active.slick-current {
   opacity: 1;
+}
+
+.slide-image {
+  height: 25rem;
+  width: 18rem;
 }

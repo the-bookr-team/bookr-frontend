@@ -3,54 +3,78 @@ import Slider from 'react-slick';
 
 const items = [
   {
-    src: 'https://images.penguinrandomhouse.com/cover/9781101931288',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    id: 1,
+    book_img:
+      'https://images-na.ssl-images-amazon.com/images/I/615f6CAjYSL.jpg',
+    title: 'Pinocchio (Sterling Unabridged Classics)',
+    author: 'Carlo Collodi',
+    publisher:
+      "Sterling Children's Books; Unabridged edition (September 2, 2014)"
   },
   {
-    src: 'https://images.penguinrandomhouse.com/cover/9780399585050',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    id: 2,
+    book_img:
+      'https://images-na.ssl-images-amazon.com/images/I/51DCK3z12-L._SX304_BO1,204,203,200_.jpg',
+    title: 'A Game of Thrones (A Song of Ice and Fire, Book 1)',
+    author: 'George R. R. Martin',
+    publisher: 'Bantam; Media Tie In, Reprint edition (March 22, 2011)'
   },
   {
-    src: 'https://images.penguinrandomhouse.com/cover/9780345805096',
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    id: 3,
+    book_img: 'https://m.media-amazon.com/images/I/81v5wp2zeQL._AC_UL436_.jpg',
+    title: 'All the Light We Cannot See: A Novel',
+    author: 'Anthony Doerr',
+    publisher: 'Scribner; Reprint edition (April 4, 2017)'
   },
   {
-    src: 'https://images.penguinrandomhouse.com/cover/9781594485756',
-    altText: 'Slide 4',
-    caption: 'Slide 4'
+    id: 4,
+    book_img: 'https://m.media-amazon.com/images/I/517NNEemClL._AC_UL436_.jpg',
+    title: 'Beneath a Scarlet Sky: A Novel',
+    author: 'Mark Sullivan',
+    publisher: 'Lake Union Publishing (May 1, 2017)'
   },
   {
-    src: 'https://images.penguinrandomhouse.com/cover/9781101946626',
-    altText: 'Slide 5',
-    caption: 'Slide 5'
+    id: 5,
+    book_img: 'https://m.media-amazon.com/images/I/913q3yNsbaL._AC_UL436_.jpg',
+    title: 'The Girl on the Train',
+    author: 'Paula Hawkins',
+    publisher: 'Riverhead Books; Reprint edition (July 12, 2016)'
   },
   {
-    src: 'https://images.randomhouse.com/cover/9780141044668',
-    altText: 'Slide 6',
-    caption: 'Slide 6'
+    id: 6,
+    book_img: 'https://m.media-amazon.com/images/I/81WWiiLgEyL._AC_UL436_.jpg',
+    title: 'Where the Crawdads Sing',
+    author: 'Delia Owens',
+    publisher: "G.P. Putnam's Sons (August 14, 2018)"
   },
   {
-    src: 'https://images.penguinrandomhouse.com/cover/9780525436140',
-    altText: 'Slide 7',
-    caption: 'Slide 7'
+    id: 7,
+    book_img: 'https://m.media-amazon.com/images/I/71124+8SsFL._AC_UL436_.jpg',
+    title:
+      "Ghost Soldiers: The Epic Account of World War II's Greatest Rescue Mission",
+    author: 'Hampton Sides',
+    publisher: 'Anchor (May 7, 2002)'
   },
   {
-    src: 'https://images.penguinrandomhouse.com/cover/9780812998955',
-    altText: 'Slide 8',
-    caption: 'Slide 8'
+    id: 8,
+    book_img: 'https://m.media-amazon.com/images/I/81WojUxbbFL._AC_UL436_.jpg',
+    title: 'Educated: A Memoir',
+    author: 'Tara Westover',
+    publisher: 'Random House; 1st edition (February 20, 2018)'
   },
   {
-    src: 'https://images.randomhouse.com/cover/9780735274259',
-    altText: 'Slide 9',
-    caption: 'Slide 9'
+    id: 9,
+    book_img: 'https://m.media-amazon.com/images/I/81wrqVLMYqL._AC_UL436_.jpg',
+    title: 'Spilled Milk: Based On A True Story',
+    author: 'K.L Randis',
+    publisher: 'K.L Randis (June 7, 2013)'
   },
   {
-    src: 'https://images.penguinrandomhouse.com/cover/9781594633409',
-    altText: 'Slide 10',
-    caption: 'Slide 10'
+    id: 10,
+    book_img: 'https://m.media-amazon.com/images/I/91XT4tkFFeL._AC_UL436_.jpg',
+    title: "The Handmaid's Tale",
+    author: 'Margaret Atwood',
+    publisher: 'Houghton Mifflin Harcourt (February 17, 1986)'
   }
 ];
 
@@ -79,24 +103,23 @@ const PrevArrow = props => {
 export default class BookCarousel extends Component {
   render() {
     const settings = {
-      width: '100vw',
       className: 'center',
       arrows: true,
       centerMode: true,
       infinite: true,
       autoplay: true,
-      autoplaySpeed: 3000,
-      centerPadding: '50px',
-      slidesToShow: 3,
-      speed: 500,
+      autoplaySpeed: 5000,
+      centerPadding: '-5px',
+      slidesToShow: 5,
+      speed: 1000,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />
     };
 
     const slides = items.map(item => {
       return (
-        <div className="solo-slide" key={item.src}>
-          <img className="slide-image" src={item.src} alt={item.altText} />
+        <div className="solo-slide" key={item.book_img}>
+          <img className="slide-image" src={item.book_img} alt={item.title} />
         </div>
       );
     });
