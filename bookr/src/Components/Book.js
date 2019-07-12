@@ -50,32 +50,23 @@ const reviews = [
 const Book = () => {
   return(
     <div className="page-container">
-    <h1>{book.title}</h1>
-    <h2>By: {book.author}</h2>
 
-    <button>Purchase Now</button>
-    <button>Add a Review</button>
+      <div className="book-header">
+        <img src={book.book_img} alt={book.title} />
 
-    <div className="reviews">
+        <div class="book-header__details">
+          <h1>{book.title}</h1>
+          <h2>By: {book.author}</h2>
+          <button>Purchase Now</button>
+          <button>Add a Review</button>
+        </div>
+      </div>
 
-    {reviews.map(review => <Review review={review} />)}
 
-
-
-
-    <div className="review">
-    Awesome book, definitely worth reading again.
-    <span className="reviewed-by">Reviewed by:</span>
-    <span className="reviewer">Dan</span>
-    </div>
-
-    <div className="review">
-    An amazing read for anyone who roots for the underdog!
-    <span className="reviewed-by">Reviewed by:</span>
-    <span className="reviewer">Justin</span>
-    </div>
-
-    </div>
+      <div className="reviews">
+        <h2>Reviews</h2>
+        {reviews.map(review => <Review review={review} key={review.id} />)}
+      </div>
     </div>
   )
 }

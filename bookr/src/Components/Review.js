@@ -5,7 +5,7 @@ const Review = props => {
     <div className="review">
       {props.review.review}
 
-      <span className="reviewed-by">Reviewed by:</span>
+      <span className="reviewed-by">Reviewed by</span>
       <span className="reviewer">{props.review.reviewer}</span>
     </div>
   )
