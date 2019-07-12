@@ -12,7 +12,8 @@ import {
   API_REQUEST_SUCCESS,
   API_REQUEST_FAILURE,
   // Action Creators
-  getBooks
+  getBooks,
+  login
 } from './index'
 
 const mock = new MockAdapter(axios)
@@ -22,6 +23,35 @@ const mockStore = configureMockStore(middleware)
 describe('Async Action Creators', () => {
   beforeEach(() => mock.reset())
   afterAll(() => mock.restore())
+
+  it('creates LOGIN_SUCCESS after successfully logging in', () => {
+    const mockRequestData = {
+      username: 'testuser',
+      password: 'password',
+    }
+
+    const mockResponseData = {
+      message: 'Welcome testuser',
+      token: 'asdf-asdfasdf-asdfasdf'
+    }
+
+    mock.onPost('http://localhost:5000/api/users/login', mockRequestData)
+      .replyOnce(200, mockResponseData)
+
+    const expectedActions = [
+      { type: LOGIN_START },
+      { type: LOGIN_SUCCESS, payload: mockResponseData.token }
+    ]
+    const store = mockStore({
+      isLogginIn: false,
+      isAuthenticated: false,
+      authToken: null,
+    })
+
+    return store.dispatch(login(mockRequestData)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions)
+    })
+  })
 
   it('creates API_REQUEST_SUCCESS when fetching books has completed', () => {
     const mockData = [

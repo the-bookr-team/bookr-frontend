@@ -10,8 +10,8 @@ export const API_REQUEST_FAILURE = 'API_REQUEST_FAILURE'
 export const login = authData => async dispatch => {
   dispatch({ type: LOGIN_START })
   try {
-    const { data } = await axios.post('http://localhost:5000/api/user', authData)
-    dispatch({ type: LOGIN_SUCCESS, payload: data })
+    const { data } = await axios.post('http://localhost:5000/api/users/login', authData)
+    dispatch({ type: LOGIN_SUCCESS, payload: data.token })
   } catch (error) {
     dispatch({ type: LOGIN_FAILURE, payload: error.response.data.error })
   }
