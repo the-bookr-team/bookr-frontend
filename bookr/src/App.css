@@ -55,9 +55,39 @@ footer nav a:hover {
   font-style: italic;
 }
 
+.collection-item-container {
+  background-color: white;
+  padding: 20px 50px;
+}
+
 .collection-item {
-  border: 1px solid green;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  padding: 20px 0;
+  width: 90%;
+  border-bottom: 1px solid #E5E5E5;
+  margin: auto;
+}
+
+.collection-item__cover {
+  width: 182px;
+  height: 276px;
+  display: block;
+  margin-right: 30px;
+}
+
+.collection-item__details h3 {
+  font-family: Lora, serif;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 31px;
+  margin-bottom: 10px;
+}
+
+.collection-item__author {
+  font-family: Roboto, sans-serif;
+  margin-bottom: 34px;
 }
 
 .carousel-control-next-icon,

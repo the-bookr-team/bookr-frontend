@@ -11,7 +11,11 @@ function App() {
       <h1>Welcome to Bookr!</h1>
       <p>The place for all your book rating needs</p>
 
-      <CollectionItem />
+      <div className="collection-item-container">
+        <CollectionItem />
+        <CollectionItem />
+        <CollectionItem />
+      </div>
 
       <Footer />
     </div>
