@@ -1,9 +1,9 @@
 import React from 'react';
-import { Star } from 'react-feather';
+import { FilledStar, EmptyStar } from './Stars';
 
 const CollectionItem = props => {
-  const defaultRatingStars = Array(5).fill(false);
-  const ratingStars = defaultRatingStars.fill(true, 0, props.book.rating)
+  const defaultPoints = Array(5).fill(false);
+  const ratingPoints = defaultPoints.fill(true, 0, props.book.rating)
 
   return(
     <div className="collection-item">
@@ -20,8 +20,7 @@ const CollectionItem = props => {
         </div>
 
         <div className="collection-item__rating">
-          Avg. Rating: 
-          { ratingStars.map(item => item ? <Star color="red" fill="red" /> : <Star color="red" />) }
+          Avg. Rating: { ratingPoints.map(point => point ? <FilledStar /> : <EmptyStar />) }
         </div>
       </div>
     </div>
