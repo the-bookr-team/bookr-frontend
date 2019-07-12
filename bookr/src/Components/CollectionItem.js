@@ -2,7 +2,8 @@ import React from 'react';
 import { Star } from 'react-feather';
 
 const CollectionItem = props => {
-  const ratingStars = Array(5).fill(false).fill(true, 0, props.book.rating)
+  const defaultRatingStars = Array(5).fill(false);
+  const ratingStars = defaultRatingStars.fill(true, 0, props.book.rating)
 
   return(
     <div className="collection-item">
