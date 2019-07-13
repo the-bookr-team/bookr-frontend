@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import LandingHero from './Components/LandingHero'
 import BookCarousel from './components/BookCarousel/BookCarousel';
 import Book from './components/Book';
 import Header from './components/Header';
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <LandingHero />
       <h1>Welcome to Bookr!</h1>
       <p>The place for all your book rating needs</p>
       <Route exact path="/" component={HomePage} />

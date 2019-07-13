@@ -1,5 +1,12 @@
-.App {
-  text-align: center;
+.font-secondary {
+  font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
+}
+
+.App .bookr-hero.bg-salmon {
+  background: #f3c6bd;
+}
+
+.App .bookr-hero h1 {
 }
 
 h2 {
