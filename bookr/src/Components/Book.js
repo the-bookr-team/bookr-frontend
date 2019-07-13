@@ -1,5 +1,6 @@
 import React from 'react';
 import Review from './Review';
+import { Button } from 'reactstrap';
 
 // This data will come from state in the final version
 
@@ -57,8 +58,8 @@ const Book = () => {
         <div class="book-header__details">
           <h1>{book.title}</h1>
           <h2>By: {book.author}</h2>
-          <button>Purchase Now</button>
-          <button>Add a Review</button>
+          <Button color="primary">Purchase Now</Button>
+          <Button outline color="primary">Add a Review</Button>
         </div>
       </div>
 
