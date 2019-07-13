@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import LandingHero from './Components/LandingHero'
 import BookCarousel from './Components/BookCarousel/BookCarousel';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -9,8 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Welcome to Bookr!</h1>
-      <p>The place for all your book rating needs</p>
+      <LandingHero />
       <BookCarousel />
       <CollectionItemContainer />
       <Footer />
