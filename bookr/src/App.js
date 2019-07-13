@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import BookCarousel from './Components/BookCarousel/BookCarousel';
 
 function App() {
   return (
@@ -9,6 +8,7 @@ function App() {
       <p>The place for all your book rating needs</p>
       <BookCarousel />
     </div>
+
   );
 }
 
