@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import LandingHero from './Components/LandingHero'
 import BookCarousel from './components/BookCarousel/BookCarousel';
 import Book from './components/Book';
 import Header from './components/Header';
@@ -10,6 +11,7 @@ import { Route } from 'react-router-dom';
 
 const HomePage = () => (
   <main>
+    <LandingHero />
     <BookCarousel />
     <CollectionItemContainer />
   </main>
@@ -25,8 +27,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Welcome to Bookr!</h1>
-      <p>The place for all your book rating needs</p>
       <Route exact path="/" component={HomePage} />
       {/* TODO - implement dynamic routing (i.e. `/book/:bookId)` */}
       {/* Source: https://reacttraining.com/react-router/web/api/Route/route-props */}
