@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import LandingHero from './Components/LandingHero'
-import BookCarousel from './components/BookCarousel/BookCarousel';
-import Book from './components/Book';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import CollectionItemContainer from './components/CollectionItemContainer';
+import BookCarousel from './Components/BookCarousel/BookCarousel';
+import Book from './Components/Book';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import CollectionItemContainer from './Components/CollectionItemContainer';
 
 import { Route } from 'react-router-dom';
 
