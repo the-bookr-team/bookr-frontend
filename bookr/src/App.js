@@ -1,18 +1,36 @@
 import React from 'react';
 import './App.css';
+import LandingHero from './Components/LandingHero'
 import BookCarousel from './Components/BookCarousel/BookCarousel';
+import Book from './Components/Book';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import CollectionItemContainer from './Components/CollectionItemContainer';
+
+import { Route } from 'react-router-dom';
+
+const HomePage = () => (
+  <main>
+    <LandingHero />
+    <BookCarousel />
+    <CollectionItemContainer />
+  </main>
+);
+
+const BookDetailPage = () => (
+  <main>
+    <Book />
+  </main>
+);
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Welcome to Bookr!</h1>
-      <p>The place for all your book rating needs</p>
-      <BookCarousel />
-      <CollectionItemContainer />
+      <Route exact path="/" component={HomePage} />
+      {/* TODO - implement dynamic routing (i.e. `/book/:bookId)` */}
+      {/* Source: https://reacttraining.com/react-router/web/api/Route/route-props */}
+      <Route path="/book" component={BookDetailPage} />
       <Footer />
     </div>
   );
