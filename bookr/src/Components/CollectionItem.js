@@ -25,7 +25,6 @@ const CollectionItem = props => {
         </div>
 
         <Link to={`/book/${props.book.id}`}>View details</Link>
-
       </div>
     </div>
   )

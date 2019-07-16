@@ -21,9 +21,9 @@ h2 {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  /* border-bottom: 1px solid gray; */
   background-color: white;
   box-shadow: 0 4px 8px lightgrey;
+  position: relative;
 }
 
 .header nav {
@@ -91,6 +91,10 @@ footer nav a:hover {
   width: 95%;
   border-bottom: 1px solid #e5e5e5;
   margin: auto;
+}
+
+.collection-item:last-child {
+  border-bottom: none;
 }
 
 .collection-item__cover {
