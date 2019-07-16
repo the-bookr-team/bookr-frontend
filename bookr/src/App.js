@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import LandingHero from './Components/LandingHero'
+import LandingHero from './Components/LandingHero';
 import BookCarousel from './Components/BookCarousel/BookCarousel';
+import AddReview from './Components/BookReview/AddReview';
 import Book from './Components/Book';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -30,7 +31,8 @@ function App() {
       <Route exact path="/" component={HomePage} />
       {/* TODO - implement dynamic routing (i.e. `/book/:bookId)` */}
       {/* Source: https://reacttraining.com/react-router/web/api/Route/route-props */}
-      <Route path="/book" component={BookDetailPage} />
+      <Route exact path="/book/:id" component={BookDetailPage} />
+      <Route path="/book/:id/review" component={AddReview} />
       <Footer />
     </div>
   );
