@@ -30,7 +30,8 @@ function App() {
       <Route exact path="/" component={HomePage} />
       {/* TODO - implement dynamic routing (i.e. `/book/:bookId)` */}
       {/* Source: https://reacttraining.com/react-router/web/api/Route/route-props */}
-      <Route path="/book" component={BookDetailPage} />
+      <Route exact path="/book/:id" component={BookDetailPage} />
+      {/* <Route path="/book" component={BookDetailPage} /> */}
       <Footer />
     </div>
   );
