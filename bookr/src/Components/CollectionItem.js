@@ -1,5 +1,6 @@
 import React from 'react';
 import { FilledStar, EmptyStar } from './Stars';
+import { Link } from 'react-router-dom';
 
 const CollectionItem = props => {
   const defaultPoints = Array(5).fill(false);
@@ -22,6 +23,8 @@ const CollectionItem = props => {
         <div className="collection-item__rating">
           Avg. Rating: { ratingPoints.map(point => point ? <FilledStar /> : <EmptyStar />) }
         </div>
+
+        <Link to={`/book/${props.book.id}`}>View details</Link>
       </div>
     </div>
   )
