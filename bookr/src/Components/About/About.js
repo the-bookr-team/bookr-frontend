@@ -21,7 +21,7 @@ const teamMembers = [
     id: 2,
     name: 'Justin Andrade',
     role: 'Backend Developer',
-    bio: "",
+    bio: "Dolor porro ad sint possimus reprehenderit sunt necessitatibus deserunt. Commodi quis vel a facilis explicabo! Eos eveniet nesciunt voluptatem harum ex. Perferendis eos numquam voluptatem nihil quia minus quam reprehenderit!",
     photo: justin,
     github: '',
     linkedin: '',
@@ -39,9 +39,9 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: 'Cesare Ferrari',
+    name: "Cesare Ferrari",
     role: 'Front-end Developer',
-    bio: "I am Cesare Ferrari, a professional web designer and developer based in Du Bois, Pennsylvania.  I work with agencies and designers to help them build profitable web sites and web applications.",
+    bio: "Hello, I am a professional web designer and developer based in Du Bois, Pennsylvania.  I work with agencies and designers to help them build profitable web sites and web applications.",
     photo: cesare,
     github: 'https://github.com/cesareferrari',
     linkedin: 'https://www.linkedin.com/in/cesare-ferrari-web-development/',
@@ -52,7 +52,7 @@ const teamMembers = [
 const About = () => {
   return(
     <div className="about">
-    <h1 class="font-secondary">Meet our team</h1>
+    <h1>Meet our team</h1>
     <p>Adipisicing nesciunt ratione ipsam hic eum veniam. Cupiditate debitis atque cupiditate libero eos? Explicabo qui magni rem cumque odio dolore! Amet nam ex nihil in ex rerum ipsam? Natus numquam.</p>
 
     {teamMembers.map(member => <TeamMember member={member} key={member.id} />)}
