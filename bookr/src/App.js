@@ -5,7 +5,7 @@ import BookCarousel from './Components/BookCarousel/BookCarousel';
 import AddReview from './Components/BookReview/AddReview';
 import Book from './Components/Book';
 import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Footer from './Components/Footer/Footer';
 import CollectionItemContainer from './Components/CollectionItemContainer/CollectionItemContainer';
 import { getBooks } from './actions';
 
