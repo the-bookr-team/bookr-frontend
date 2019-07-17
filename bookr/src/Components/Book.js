@@ -3,7 +3,8 @@ import Review from './Review';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import axios from 'axios';
+
+import { fetchBook } from '../utils';
 
 class Book extends Component {
   constructor(props) {
@@ -14,23 +15,13 @@ class Book extends Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { id } = this.props.match.params;
-    this.fetchBook(id);
-  }
-  
-  fetchBook = async id => {
-    try {
-      const { data } = await axios.get(`http://localhost:5000/api/books/${id}`);
-      const book = data['0'];
-      const { reviews } = data;
-      this.setState({
-        book,
-        reviews
-      });
-    } catch (error) {
-      console.error(error);
-    }
+    const [book, reviews] = await fetchBook(id);
+    this.setState({
+      book,
+      reviews
+    });
   }
 
   render() {
