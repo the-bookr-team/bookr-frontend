@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilledStar, EmptyStar } from './Stars';
+import { FilledStar, EmptyStar } from '../Stars/Stars';
 import { Link } from 'react-router-dom';
 
 const CollectionItem = props => {
