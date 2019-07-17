@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { EmptyStar } from '../Stars';
+
+import { fetchBook } from '../../utils';
 
 export default class AddReview extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      book: null,
+    };
+  }
+
+  async componentDidMount() {
+    const { id } = this.props.match.params;
+    const [book, reviews] = await fetchBook(id);
+    this.setState({ book });
   }
 
   render() {
     return (
       <div className="add-review-wrapper">
-        <ReviewDetails />
+        <ReviewDetails book={this.state.book} />
         <StarRating />
         <ReviewForm />
       </div>
@@ -20,14 +29,18 @@ export default class AddReview extends Component {
   }
 }
 
-const ReviewDetails = () => {
-  // const { book_img, title, author } = book;
+const ReviewDetails = (props) => {
+  if (!props.book) {
+    return <p>Loading...</p>
+  }
+
+  const { book_img, title, author } = props.book;
   return (
     <div className="title-wrapper">
-      <img />
-      <h3 className="review-title">Add a Review for: </h3>
+      <img src={book_img} alt={title} />
+      <h3 className="review-title">Add a Review for: {title}</h3>
       <p className="author">
-        Author:
+        Author: {author}
         <em />
       </p>
     </div>
