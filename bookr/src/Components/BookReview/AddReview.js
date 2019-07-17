@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
-import { EmptyStar } from '../Stars';
+import { EmptyStar } from '../Stars/Stars';
 
 import { fetchBook } from '../../utils';
 
