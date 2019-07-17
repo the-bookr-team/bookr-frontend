@@ -242,3 +242,24 @@ footer nav a:hover {
 .close {
   color: white;
 }
+
+.about {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 4px 8px lightgrey;
+}
+
+.about h1 {
+  text-align: center;
+}
+
+.team-member {
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-member img {
+  width: 200px;
+}

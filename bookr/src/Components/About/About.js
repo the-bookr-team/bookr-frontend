@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../App.css';
 import justin from '../../assets/justin.jpg';
 import cedric from '../../assets/cedric.jpg';
 import dan from '../../assets/dan.jpg';
@@ -7,6 +8,7 @@ import TeamMember from './TeamMember';
 
 const teamMembers = [
   {
+    id: 1,
     name: "Cedric 'The Wizard' Amaya",
     role: 'Front-end Developer',
     bio: "I'm a Computer Science major and software developer with a great passion for solving problems with the use of code. I love working day-to-day on projects that require multidisciplinary skill sets and solving complex issues that make the lives of others easier.",
@@ -16,6 +18,7 @@ const teamMembers = [
     twitter: 'https://twitter.com/CedricAmaya'
   },
   {
+    id: 2,
     name: 'Justin Andrade',
     role: 'Backend Developer',
     bio: "",
@@ -25,6 +28,7 @@ const teamMembers = [
     twitter: ''
   },
   {
+    id: 3,
     name: "Dan 'The Dev' Sample",
     role: 'Front-end Developer',
     bio: "I am a full stack web developer student at Lambda School. I am married and we have a handsome 1 year old baby boy. I love coding and solving everyday problems with the power of technology. I also enjoy the art of creating and love to work on UI/UX projects.",
@@ -34,6 +38,7 @@ const teamMembers = [
     twitter: 'https://twitter.com/DanTheDev3'
   },
   {
+    id: 4,
     name: 'Cesare Ferrari',
     role: 'Front-end Developer',
     bio: "I am Cesare Ferrari, a professional web designer and developer based in Du Bois, Pennsylvania.  I work with agencies and designers to help them build profitable web sites and web applications.",
@@ -46,11 +51,11 @@ const teamMembers = [
 
 const About = () => {
   return(
-    <div>
-    About page
-    <br/>
+    <div className="about">
+    <h1 class="font-secondary">Meet our team</h1>
+    <p>Adipisicing nesciunt ratione ipsam hic eum veniam. Cupiditate debitis atque cupiditate libero eos? Explicabo qui magni rem cumque odio dolore! Amet nam ex nihil in ex rerum ipsam? Natus numquam.</p>
 
-    {teamMembers.map(member => <TeamMember member={member} />)}
+    {teamMembers.map(member => <TeamMember member={member} key={member.id} />)}
 
     </div>
   )
