@@ -21,9 +21,9 @@ h2 {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  /* border-bottom: 1px solid gray; */
   background-color: white;
   box-shadow: 0 4px 8px lightgrey;
+  position: relative;
 }
 
 .header nav {
@@ -91,6 +91,10 @@ footer nav a:hover {
   width: 95%;
   border-bottom: 1px solid #e5e5e5;
   margin: auto;
+}
+
+.collection-item:last-child {
+  border-bottom: none;
 }
 
 .collection-item__cover {
@@ -188,4 +192,53 @@ footer nav a:hover {
   font-family: Lora, serif;
   font-style: italic;
   font-size: 1rem;
+}
+
+.modal-title {
+  width: 100%;
+}
+
+.login-header {
+  background-color: #3040C4;
+  color: white;
+}
+
+.login-header img {
+  display: block;
+  margin: auto;
+  height: 65px;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-form {
+  width: 48%;
+  padding: 20px;
+}
+
+.modal-form button {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.modal-divider {
+  width: 1px;
+  background-color: lightgray;
+}
+
+.modal-body div label {
+  display: block;
+  margin-top: 1rem;
+}
+
+.modal-body div input {
+  display: block;
+  width: 100%;
+}
+
+.close {
+  color: white;
 }
