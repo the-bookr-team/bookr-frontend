@@ -6,6 +6,7 @@ import AddReview from './Components/BookReview/AddReview';
 import Book from './Components/Book';
 import Header from './Components/Header';
 import Footer from './Components/Footer/Footer';
+import About from './Components/About/About';
 import CollectionItemContainer from './Components/CollectionItemContainer/CollectionItemContainer';
 import { getBooks } from './actions';
 
@@ -40,6 +41,7 @@ class App extends Component {
         {/* Source: https://reacttraining.com/react-router/web/api/Route/route-props */}
         <Route exact path="/book/:id" component={BookDetailPage} />
         <Route path="/book/:id/review" component={AddReview} />
+        <Route path="/about" component={About} />
         <Footer />
       </div>
     );
