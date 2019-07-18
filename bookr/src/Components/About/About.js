@@ -53,7 +53,7 @@ const About = () => {
   return(
     <div className="about">
     <h1>Meet our team</h1>
-    <p>Adipisicing nesciunt ratione ipsam hic eum veniam. Cupiditate debitis atque cupiditate libero eos? Explicabo qui magni rem cumque odio dolore! Amet nam ex nihil in ex rerum ipsam? Natus numquam.</p>
+    <p>Spread all throughout the United States, we are four Lambda School students from various cohorts. With our unique backgrounds and diverse skill sets, we were able to pull off building this awesome project Bookr in two weeks.</p>
 
     {teamMembers.map(member => <TeamMember member={member} key={member.id} />)}
 

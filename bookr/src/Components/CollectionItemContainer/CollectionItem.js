@@ -1,10 +1,7 @@
 import React from 'react';
-import { FilledStar, EmptyStar } from '../Stars/Stars';
+import StaticRating from '../Stars/StaticRating';
 
 const CollectionItem = props => {
-  const defaultPoints = Array(5).fill(false);
-  const ratingPoints = defaultPoints.fill(true, 0, props.book.rating)
-
   return(
     <div className="collection-item">
       <img className="collection-item__cover"
@@ -20,7 +17,7 @@ const CollectionItem = props => {
         </div>
 
         <div className="collection-item__rating">
-          Avg. Rating: { ratingPoints.map(point => point ? <FilledStar /> : <EmptyStar />) }
+          Avg. Rating: <StaticRating value={props.book.rating} />
         </div>
       </div>
     </div>
