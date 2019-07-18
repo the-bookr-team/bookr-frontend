@@ -19,10 +19,19 @@ class Login extends React.Component {
     }));
   }
 
+  buttonOrLink = (button = false) => {
+    if (button) {
+      return(<Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}</Button>)
+    };
+
+    return(<a href="#" onClick={this.toggle}>{this.props.buttonLabel}</a>) 
+  }
+
   render() {
     return(
       <div>
-      <a href="#" onClick={this.toggle}>{this.props.buttonLabel}</a>
+      { this.buttonOrLink(this.props.button) }
+
       <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} size="lg">
         <ModalHeader className="login-header" toggle={this.toggle}>
           <img src={logoWhite} alt="Bookr" />
