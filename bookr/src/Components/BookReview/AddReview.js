@@ -13,14 +13,16 @@ class AddReview extends Component {
       book: null,
       rating: null,
       review: '',
-      value: 0
+      value: 0,
+      username: '',
     };
   }
 
   async componentDidMount() {
+    const { username } = JSON.parse(localStorage.getItem('auth'))
     const { id } = this.props.match.params;
     const [book, reviews] = await fetchBook(id);
-    this.setState({ book });
+    this.setState({ book, username });
   }
 
   handleReview = e => {
@@ -36,7 +38,7 @@ class AddReview extends Component {
     e.preventDefault();
     const id = this.state.book.id;
     const newReview = {
-      reviewer: this.props.username,
+      reviewer: this.state.username,
       reviewer_id: this.props.userId,
       review: this.state.review,
       rating: this.state.value
