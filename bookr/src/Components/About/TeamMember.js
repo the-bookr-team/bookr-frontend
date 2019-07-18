@@ -16,9 +16,9 @@ const TeamMember = props => {
         <p>{props.member.bio}</p>
 
         <div className="social-links">
-          <Link to={props.member.github}><GitHub color="none" fill="gray" /></Link>
-          <Link to={props.member.linkedin}><Linkedin color="none" fill="gray" /></Link>
-          <Link to={props.member.twitter}><Twitter color="none" fill="gray" /></Link>
+          <a href={props.member.github}><GitHub color="none" fill="gray" /></a>
+          <a href={props.member.linkedin}><Linkedin color="none" fill="gray" /></a>
+          <a href={props.member.twitter}><Twitter color="none" fill="gray" /></a>
         </div>
 
       </div>
