@@ -45,14 +45,15 @@ export const deleteBook = bookId => async dispatch => {
 export const addReview = (bookId, review) => async dispatch => {
   dispatch({ type: API_REQUEST_START });
   try {
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo2LCJ1c2VybmFtZSI6IkJhYUIiLCJpYXQiOjE1NjM0MjY3OTIsImV4cCI6MTU2MzUxMzE5Mn0.DxBnwdpPEzCoX6vvpeGYsfdyxQ6hpmzRGqur7gsPQ6Q';
+    const token = localStorage.getItem('token')
     const { data } = await axios.post(
-      `${BOOKR_API_DOMAIN}/api/reviews/books/${bookId}`,
-      review,
-      {
+      `${BOOKR_API_DOMAIN}/api/reviews/books/${bookId}`, {
+        book_id: bookId,
+        ...review
+      }, {
         headers: {
-          Authorization: token
+          'Authorization': token,
+          'Content-Type': 'application/json'
         }
       }
     );

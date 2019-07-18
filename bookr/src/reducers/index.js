@@ -11,13 +11,11 @@ const initialState = {
   error: null,
   books: [],
   isAuthenticated: false,
-  authToken:
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo2LCJ1c2VybmFtZSI6IkJhYUIiLCJpYXQiOjE1NjM0MjY3OTIsImV4cCI6MTU2MzUxMzE5Mn0.DxBnwdpPEzCoX6vvpeGYsfdyxQ6hpmzRGqur7gsPQ6Q',
-  // the below Booleans are used to display loading spinners where appropriate
+  authToken: '',
   isLoggingIn: false,
   makingAPIReqeust: false,
-  username: 'BaaB',
-  userId: 6
+  username: '',
+  userId: null,
 };
 
 const rootReducer = (state = initialState, action) => {
