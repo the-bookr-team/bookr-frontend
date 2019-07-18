@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .font-secondary {
   font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
 }
@@ -277,6 +279,17 @@ footer nav a:hover {
   margin-top: 0.5rem;
 }
 
+.title-wrapper {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.title-wrapper .title-author {
+  height: 100%;
+  width: 100%;
+  padding-left: 1rem;
+}
+
 /* About CSS */
 
 .about {
@@ -295,7 +308,7 @@ footer nav a:hover {
   font-size: 3rem;
 }
 
-.about>p {
+.about > p {
   width: 70%;
   margin: 1rem auto 2rem;
   font-size: 1.2rem;
@@ -355,5 +368,5 @@ footer nav a:hover {
 
 .social-links a {
   display: inline-block;
-  margin: 0 .6rem;
+  margin: 0 0.6rem;
 }
