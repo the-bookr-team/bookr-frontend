@@ -3,9 +3,14 @@
 .font-secondary {
   font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
 }
+.app-body {
+  max-width: 1354px;
+  margin: 0 auto;
+}
 
 .App .bookr-hero.bg-salmon {
   background: #f3c6bd;
+  margin-top: 2rem;
 }
 
 .App .bookr-hero h1 {
@@ -85,8 +90,9 @@ footer nav .nav-item:hover {
   background-color: white;
   padding: 20px 70px;
   box-shadow: 0 0 16px lightgrey;
-  width: 90%;
-  margin: 0 auto 4rem;
+  border-radius: 5px;
+  width: 100%;
+  margin: 2rem 0;
 }
 
 .collection-item {
@@ -123,12 +129,12 @@ footer nav .nav-item:hover {
   margin-bottom: 34px;
 }
 
+/* Book Carousel CSS */
 .carousel-wrapper {
   align-self: center;
-  max-width: 90rem;
-  margin: 0 auto;
   padding-top: 0.5rem;
   background-color: #282c34;
+  border-radius: 5px;
 }
 
 .slick-slide {
@@ -141,8 +147,16 @@ footer nav .nav-item:hover {
 
 .slide-image {
   height: 25rem;
-  width: 18rem;
+  width: 17rem;
+  border-radius: 5px;
 }
+
+/* .slick-prev:before {
+  color: #007bff;
+}
+.slick-next:before {
+  color: #007bff;
+} */
 
 .book-header {
   display: flex;

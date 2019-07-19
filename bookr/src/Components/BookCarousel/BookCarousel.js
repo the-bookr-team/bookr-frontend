@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 
+import { settings } from './BookCarouselSettings';
+
 const items = [
   {
     id: 1,
@@ -78,44 +80,8 @@ const items = [
   }
 ];
 
-const NextArrow = props => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block', background: 'black' }}
-      onClick={onClick}
-    />
-  );
-};
-
-const PrevArrow = props => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block', background: 'black' }}
-      onClick={onClick}
-    />
-  );
-};
-
 export default class BookCarousel extends Component {
   render() {
-    const settings = {
-      className: 'center',
-      arrows: true,
-      centerMode: true,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 5000,
-      centerPadding: '-5px',
-      slidesToShow: 5,
-      speed: 1000,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />
-    };
-
     const slides = items.map(item => {
       return (
         <div className="solo-slide" key={item.book_img}>
