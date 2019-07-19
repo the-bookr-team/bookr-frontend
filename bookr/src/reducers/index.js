@@ -1,4 +1,5 @@
 import {
+  LOGOUT,
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
@@ -26,6 +27,14 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOGOUT:
+      return {
+        ...state,
+        username: '',
+        userId: null,
+        authToken: '',
+        isAuthenticated: false,
+      }
     case LOGIN_START:
       return {
         ...state,

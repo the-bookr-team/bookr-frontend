@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Review from './Review';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
@@ -46,19 +47,21 @@ class Book extends Component {
             <h1>{title}</h1>
             <h2>By: {author}</h2>
             <Button color="primary">Purchase Now</Button>
-            <Link
-              to={{
-                pathname: `/book/${id}/review`,
-                state: this.state.book
-              }}
-            >
-              <Button
-                outline
-                color="primary"
+            {this.props.isAuthenticated &&
+              <Link
+                to={{
+                  pathname: `/book/${id}/review`,
+                  state: this.state.book
+                }}
               >
-                Add a Review
-              </Button>
-            </Link>
+                <Button
+                  outline
+                  color="primary"
+                >
+                  Add a Review
+                </Button>
+              </Link>
+            }
           </div>
         </div>
   
@@ -73,4 +76,8 @@ class Book extends Component {
   }
 };
 
-export default withRouter(Book);
+const mapStateToProps = state => ({
+  isAuthenticated: state.isAuthenticated,
+});
+
+export default withRouter(connect(mapStateToProps)(Book));

@@ -32,14 +32,16 @@ h2 {
   display: flex;
   width: 40%;
   justify-content: space-between;
+  align-items: center;
 }
 
-.header nav a {
+.header nav .nav-item {
+  font-size: 16px !important;
   color: #2b292d;
   text-decoration: none;
 }
 
-.header nav a:hover {
+.header nav .nav-item:hover {
   text-decoration: underline;
 }
 
@@ -55,14 +57,16 @@ footer nav {
   width: 80%;
   margin: auto;
   justify-content: space-around;
+  align-items: center;
 }
 
-footer nav a {
+footer nav .nav-item {
+  font-size: 16px !important;
   color: white;
   text-decoration: none;
 }
 
-footer nav a:hover {
+footer nav .nav-item:hover {
   color: white;
   text-decoration: underline;
 }
