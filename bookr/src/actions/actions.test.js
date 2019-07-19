@@ -8,11 +8,17 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  REGISTRATION_START,
+  REGISTRATION_SUCCESS,
+  REGISTRATION_FAILURE,
   API_REQUEST_START,
   API_REQUEST_SUCCESS,
   API_REQUEST_FAILURE,
+
   // Action Creators
-  getBooks
+  getBooks,
+  login,
+  register,
 } from './index'
 
 const mock = new MockAdapter(axios)
@@ -64,6 +70,60 @@ describe('Async Action Creators', () => {
     })
 
     return store.dispatch(getBooks()).then(() => {
+      expect(store.getActions()).toEqual(expectedActions)
+    })
+  })
+
+  it('creates LOGIN_SUCCESS after successfully loggin in', () => {
+    const mockLogin = {
+      username: 'alice',
+      password: 'password',
+    }
+    const mockResponse = {
+      message: 'Welcome alice',
+      token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'
+    }
+
+    mock.onPost('http://localhost:5000/api/users/login').replyOnce(200, mockResponse)
+
+    const expectedActions = [
+      { type: LOGIN_START },
+      { type: LOGIN_SUCCESS, payload: mockResponse.token },
+    ]
+    const store = mockStore({
+      isLoggingIn: false,
+      authToken: null,
+      isAuthenticated: false,
+    })
+
+    return store.dispatch(login(mockLogin)).then(() => {
+      expect(store.getActions()).toEqual(expectedActions)
+    })
+  })
+
+  it ('creates REGISTRATION_SUCCESS after successfully registering a new user', () => {
+    const mockRegistration = {
+      username: 'bob',
+      password: 'password',
+    }
+    const mockResponse = {
+      id: 42,
+      username: 'bob',
+      password: '$2a$10$6w7FiNntDsUxHHpZ0s4.lulqW9oEyZtVyZHj/GgvWkYIW.Jl7loya'
+    }
+
+    mock.onPost('http://localhost:5000/api/users/register').replyOnce(201, mockResponse)
+
+    const expectedActions = [
+      { type: REGISTRATION_START },
+      { type: REGISTRATION_SUCCESS },
+    ]
+    const store = mockStore({
+      isRegistering: false,
+      wasRegistrationSuccessful: null,
+    })
+
+    return store.dispatch(register(mockRegistration)).then(() => {
       expect(store.getActions()).toEqual(expectedActions)
     })
   })

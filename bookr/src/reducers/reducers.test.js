@@ -4,6 +4,9 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  REGISTRATION_START,
+  REGISTRATION_SUCCESS,
+  REGISTRATION_FAILURE,
   API_REQUEST_START,
   API_REQUEST_SUCCESS,
   API_REQUEST_FAILURE,
@@ -15,6 +18,8 @@ describe('Root Reducer', () => {
     books: [],
     isAuthenticated: false,
     authToken: null,
+    wasRegistrationSuccessful: false,
+    isRegistering: false,
     isLoggingIn: false,
     makingAPIReqeust: false,
   }
@@ -68,4 +73,37 @@ describe('Root Reducer', () => {
       error: mockErrorMsg,
     })
   })
+
+  it('shoudl handle LOGIN_START', () => {
+    expect(
+      rootReducer(undefined, {
+        type: LOGIN_START
+      })
+    ).toEqual({
+      ...initialState,
+      isLoggingIn: true,
+    })
+  })
+
+  it('should handle LOGIN_SUCCESS', () => {
+    const mockData = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9'
+    expect(
+      rootReducer(undefined, {
+        type: LOGIN_SUCCESS,
+        payload: mockData
+      })
+    ).toEqual({
+      ...initialState,
+      isLoggingIn: false,
+      isAuthenticated: true,
+      authToken: mockData,
+    })
+  })
+
+  /**
+   * TODO - test reducers for LOGIN and REGISTER
+   */
+  // it('should handle LOGIN_FAILURE')
+  // it('should handle REGISTRATION_SUCCESS')
+  // it('should handle REGISTRATION_FAILURE')
 })

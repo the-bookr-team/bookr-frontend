@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .font-secondary {
   font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
 }
@@ -199,7 +201,7 @@ footer nav a:hover {
 }
 
 .login-header {
-  background-color: #3040C4;
+  background-color: #3040c4;
   color: white;
 }
 
@@ -241,4 +243,131 @@ footer nav a:hover {
 
 .close {
   color: white;
+}
+
+/* AddReview CSS */
+
+.add-review-wrapper {
+  width: 1354px;
+  margin: 0 auto;
+}
+
+.review-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30rem;
+  width: 100%;
+}
+
+.review-form-wrapper .review-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 25rem;
+  width: 100%;
+}
+
+.review-form-wrapper .review-form textarea {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.review-form-wrapper .review-form .form-button {
+  margin-top: 0.5rem;
+}
+
+.title-wrapper {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.title-wrapper .title-author {
+  height: 100%;
+  width: 100%;
+  padding-left: 1rem;
+}
+
+/* About CSS */
+
+.about {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 4px 8px lightgrey;
+}
+
+.about h1 {
+  text-align: center;
+  font-family: Lora, serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.about > p {
+  width: 70%;
+  margin: 1rem auto 2rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.team-member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.team-member:last-child {
+  border-bottom: none;
+}
+
+.team-member-img {
+  width: 25%;
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.team-member__details {
+  width: 70%;
+}
+
+.team-member__details p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.team-member__details h2 {
+  font-family: Lora, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.team-member__details h3 {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: gray;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 0.6rem;
 }
