@@ -23,9 +23,9 @@ const teamMembers = [
     role: 'Backend Developer',
     bio: "Dolor porro ad sint possimus reprehenderit sunt necessitatibus deserunt. Commodi quis vel a facilis explicabo! Eos eveniet nesciunt voluptatem harum ex. Perferendis eos numquam voluptatem nihil quia minus quam reprehenderit!",
     photo: justin,
-    github: '',
-    linkedin: '',
-    twitter: ''
+    github: 'https://github.com/justinandrade',
+    linkedin: 'https://www.linkedin.com/in/justin-andrade-75aab1150/',
+    twitter: 'https://twitter.com/JustinAndrade_J'
   },
   {
     id: 3,
