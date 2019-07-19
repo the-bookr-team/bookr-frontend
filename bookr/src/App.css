@@ -100,27 +100,6 @@ footer nav a:hover {
 	margin-bottom: 34px;
 }
 
-.carousel-wrapper {
-	align-self: center;
-	max-width: 90rem;
-	margin: 0 auto;
-	padding-top: 0.5rem;
-	background-color: #282c34;
-}
-
-.slick-slide {
-	opacity: 0.2;
-}
-
-.slick-slide.slick-active.slick-current {
-	opacity: 1;
-}
-
-.slide-image {
-	height: 25rem;
-	width: 18rem;
-}
-
 .book-header {
 	display: flex;
 	justify-content: space-between;

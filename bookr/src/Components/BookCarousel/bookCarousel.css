@@ -1,0 +1,49 @@
+.carousel h2 {
+	margin-left: 15%;
+	font-weight: bold;
+}
+
+.carousel-wrapper {
+	align-self: center;
+	max-width: 90rem;
+	margin: 0 auto;
+	padding-top: 0.2rem;
+	background-color: #282c34;
+	height: px;
+	width: 70%;
+}
+
+.slick-slide {
+	opacity: 0.2;
+}
+
+.slick-slide.slick-active.slick-current {
+	opacity: 1;
+}
+
+.slide-image {
+	height: 18rem;
+	width: auto;
+}
+
+.solo-slide * {
+	width: 50%;
+}
+
+.slide-image {
+	width: 100%;
+}
+
+.slick-arrow:before * {
+	background: white;
+}
+
+.slick-next:before {
+	color: #000;
+	opacity: 1;
+}
+
+.slick-prev:before {
+	color: #000;
+	opacity: 1;
+}
