@@ -16,6 +16,7 @@ import { connect } from 'react-redux';
 const HomePage = () => (
   <main>
     <LandingHero />
+    <h3>Featured Books</h3>
     <BookCarousel />
     <CollectionItemContainer />
   </main>
