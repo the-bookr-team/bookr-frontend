@@ -4,17 +4,13 @@
 	font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
 }
 
-.App .bookr-hero.bg-salmon {
-	background: #f3c6bd;
-}
-
-.App .bookr-hero h1 {
-}
-
 h2 {
 	font-family: Roboto, sans-serif;
 	font-size: 1.6rem;
 	font-weight: bold;
+}
+
+.get-started-container {
 }
 
 .header {

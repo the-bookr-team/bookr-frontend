@@ -1,0 +1,25 @@
+.bookr-hero {
+	background: #f3c6bd;
+	position: relative;
+	height: 280px;
+	width: 60%;
+	margin: 15px auto;
+}
+.jumbotron {
+	border-radius: 20px;
+	padding: 50px 20px 0 75px;
+}
+
+.hero-container {
+	padding-bottom: 10px;
+	position: sticky;
+}
+
+.bookr-hero h1 {
+	font-size: 1.85rem;
+}
+
+.hero-img {
+	width: 72%;
+	margin-left: 15%;
+}
