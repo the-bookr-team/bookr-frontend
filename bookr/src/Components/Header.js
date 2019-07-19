@@ -11,8 +11,12 @@ const Header = () => {
 			<Link to="/">
 				<img src={logo} alt="Logo" />
 			</Link>
-			<Searchbar />
-			<Navigation />
+			<div className="searchbar">
+				<Searchbar />
+			</div>
+			<div className="nav-menu">
+				<Navigation />
+			</div>
 		</div>
 	);
 };

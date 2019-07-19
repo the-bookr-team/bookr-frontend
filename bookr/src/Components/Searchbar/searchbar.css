@@ -1,0 +1,13 @@
+.searchbar input {
+	width: 170%;
+	border-radius: 25px;
+	border: 1px solid darkgrey;
+	background: #f1f1f1;
+	padding: none;
+	margin: 0;
+	text-align: center;
+}
+
+.searchbar input:focus {
+	outline: none;
+}
