@@ -2,6 +2,13 @@ import React from 'react';
 import StaticRating from '../Stars/StaticRating';
 
 const CollectionItem = props => {
+  const calculateAvgRating = reviews => {
+    const numReviews = reviews.length
+    const sum = reviews.reduce((acc, curr) => { return curr.rating + acc }, 0)
+    const avgRating = Math.round(sum / numReviews)
+    return avgRating
+  }
+
   return(
     <div className="collection-item">
       <img className="collection-item__cover"
@@ -17,7 +24,7 @@ const CollectionItem = props => {
         </div>
 
         <div className="collection-item__rating">
-          Avg. Rating: <StaticRating value={props.book.rating} />
+          Avg. Rating: <StaticRating value={calculateAvgRating(props.book.reviews)} />
         </div>
       </div>
     </div>
