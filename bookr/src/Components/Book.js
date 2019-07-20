@@ -50,7 +50,7 @@ class Book extends Component {
             <h2>By: {author}</h2>
 
 
-            Avg. Rating: <StaticRating value={calculateAvgRating(reviews)} />
+            <h2>Avg. Rating: <StaticRating value={calculateAvgRating(reviews)} /></h2>
 
 
             <Button color="primary">Purchase Now</Button>
