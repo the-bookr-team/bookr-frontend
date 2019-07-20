@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 import { fetchBook } from '../utils';
+import Login from './Login';
 
 class Book extends Component {
   constructor(props) {
     super(props);
     this.state = {
       book: null,
-      reviews: [],
+      reviews: []
     };
   }
 
@@ -30,41 +31,43 @@ class Book extends Component {
       return <p>Loading...</p>;
     }
 
-    const {
-      id,
-      author,
-      book_img,
-      title,
-    } = this.state.book;
+    const { id, author, book_img, title } = this.state.book;
     const { reviews } = this.state;
 
     return (
       <div className="page-container">
         <div className="book-header">
           <img src={book_img} alt={title} />
-  
+
           <div className="book-header__details">
             <h1>{title}</h1>
             <h2>By: {author}</h2>
-            <Button color="primary">Purchase Now</Button>
-            {this.props.isAuthenticated &&
-              <Link
-                to={{
-                  pathname: `/book/${id}/review`,
-                  state: this.state.book
-                }}
-              >
-                <Button
-                  outline
-                  color="primary"
+            <div className="button-wrapper">
+              <Button color="primary">Purchase Now</Button>
+              {this.props.isAuthenticated ? (
+                <Link
+                  to={{
+                    pathname: `/book/${id}/review`,
+                    state: this.state.book
+                  }}
                 >
-                  Add a Review
-                </Button>
-              </Link>
-            }
+                  <Button outline color="primary">
+                    Add a Review
+                  </Button>
+                </Link>
+              ) : (
+                <Login
+                  buttonLabel={
+                    <Button className="sign-in-button" outline color="primary">
+                      Sign in
+                    </Button>
+                  }
+                />
+              )}
+            </div>
           </div>
         </div>
-  
+
         <div className="reviews">
           <h2>Reviews</h2>
           {reviews.map(review => (
@@ -74,10 +77,10 @@ class Book extends Component {
       </div>
     );
   }
-};
+}
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.isAuthenticated,
+  isAuthenticated: state.isAuthenticated
 });
 
 export default withRouter(connect(mapStateToProps)(Book));

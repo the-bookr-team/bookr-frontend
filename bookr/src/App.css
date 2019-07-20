@@ -191,6 +191,14 @@ footer nav .nav-item:hover {
   margin-right: 1rem;
 }
 
+.page-container .book-header .book-header__details .button-wrapper {
+  display: flex;
+}
+
+.sign-in-button {
+  width: 126px;
+}
+
 .reviews {
   margin: 2rem auto 2rem;
 }
