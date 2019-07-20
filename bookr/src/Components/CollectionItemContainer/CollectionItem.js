@@ -1,13 +1,8 @@
 import React from 'react';
 import StaticRating from '../Stars/StaticRating';
+import { calculateAvgRating  } from '../../utils';
 
 const CollectionItem = props => {
-  const calculateAvgRating = reviews => {
-    const numReviews = reviews.length
-    const sum = reviews.reduce((acc, curr) => { return curr.rating + acc }, 0)
-    const avgRating = Math.round(sum / numReviews)
-    return avgRating
-  }
 
   return(
     <div className="collection-item">
