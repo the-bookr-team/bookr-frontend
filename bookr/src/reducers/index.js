@@ -45,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         isLoggingIn: false,
         isAuthenticated: true,
-        authToken: action.payload
+        ...action.payload
       };
     case LOGIN_FAILURE:
       return {
