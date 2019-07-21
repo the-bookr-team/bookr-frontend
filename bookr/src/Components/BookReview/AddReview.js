@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import Rater from '../Stars/Stars2';
 
-import { addReview } from '../../actions';
+import { addReview, editReview } from '../../actions';
 import { fetchBook } from '../../utils';
 import { connect } from 'react-redux';
 
@@ -22,7 +22,15 @@ class AddReview extends Component {
     const { username } = JSON.parse(localStorage.getItem('auth'))
     const { id } = this.props.match.params;
     const [book, reviews] = await fetchBook(id);
-    this.setState({ book, username });
+    if (!this.props.location.state) {
+      this.setState({ book, username });
+    } else {
+      this.setState({
+        username,
+        book,
+        ...this.props.location.state
+      })
+    }
   }
 
   handleReview = e => {
@@ -44,7 +52,12 @@ class AddReview extends Component {
       rating: this.state.value
     };
     setTimeout(async () => {
-      await this.props.addReview(id, newReview);
+      if (this.props.location.state.editingReview) {
+        const reviewId = this.props.location.state.id
+        await this.props.editReview(reviewId, newReview);
+      } else {
+        await this.props.addReview(id, newReview);
+      }
       this.props.history.push(`/book/${id}`);
     }, 500);
   };
@@ -61,7 +74,9 @@ class AddReview extends Component {
           />
         </div>
         <ReviewForm
+          {...this.props}
           book={this.state.book}
+          review={this.state.review}
           handleRatingSubmit={this.handleRatingSubmit}
           handleReview={this.handleReview}
         />
@@ -93,17 +108,19 @@ const ReviewForm = props => {
   if (!props.book) {
     return <p>Loading...</p>;
   }
+  const { editingReview } = props.location.state || false;
   const { title } = props.book;
   return (
     <div className="review-form-wrapper">
       <h3>What did you think?</h3>
       <form className="review-form" onSubmit={props.handleRatingSubmit}>
         <textarea
+          value={props.review}
           onChange={props.handleReview}
           placeholder={`Write a review of ${title}`}
         />
         <Button color="primary" className="form-button" type="submit">
-          Submit Review
+          {editingReview ? 'Update Review' : 'Submit Review'}
         </Button>
       </form>
     </div>
@@ -117,5 +134,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addReview }
+  { addReview, editReview }
 )(AddReview);
