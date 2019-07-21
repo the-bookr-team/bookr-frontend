@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CollectionItem from './CollectionItem';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import { getBooks } from '../../actions';
 
 const CollectionItemContainer = props => {
+  useEffect(() => {
+    props.getBooks()
+  }, [])
+
   return (
     <div className="page-container">
       {props.books.map(book => (
@@ -30,5 +35,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  {}
+  { getBooks }
 )(CollectionItemContainer);

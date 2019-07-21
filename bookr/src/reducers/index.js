@@ -79,7 +79,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         makingAPIReqeust: false,
-        books: action.payload
+        books: action.payload || state.books
       };
     case API_REQUEST_FAILURE:
       return {

@@ -84,7 +84,7 @@ export const addReview = (bookId, review) => async dispatch => {
         }
       }
     );
-    dispatch({ type: API_REQUEST_SUCCESS, payload: data });
+    dispatch({ type: API_REQUEST_SUCCESS });
   } catch (error) {
     dispatch({ type: API_REQUEST_FAILURE, payload: error.response.data.error });
   }
