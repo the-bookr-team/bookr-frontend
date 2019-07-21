@@ -35,12 +35,6 @@ h2 {
   position: relative;
 }
 
-@media only screen and (max-width: 600px) {
-  .header {
-    background-color: lightblue;
-  }
-}
-
 .header nav {
   display: flex;
   width: 40%;
