@@ -13,9 +13,6 @@
   margin-top: 2rem;
 }
 
-.App .bookr-hero h1 {
-}
-
 h2 {
   font-family: Roboto, sans-serif;
   font-size: 1.6rem;
@@ -33,12 +30,6 @@ h2 {
   background-color: white;
   box-shadow: 0 4px 8px lightgrey;
   position: relative;
-}
-
-@media only screen and (max-width: 600px) {
-  .header {
-    background-color: lightblue;
-  }
 }
 
 .header nav {
