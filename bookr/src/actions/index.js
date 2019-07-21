@@ -104,3 +104,16 @@ export const deleteReview = reviewId => async dispatch => {
     dispatch({ type: API_REQUEST_FAILURE, payload: error.response.data.error });
   }
 };
+
+export const editReview = (reviewId, newReview) => async dispatch => {
+  dispatch({ type: API_REQUEST_START });
+  try {
+    const { data } = await axios.put(
+      `${BOOKR_API_DOMAIN}/api/reviews/${reviewId}`,
+      newReview
+    );
+    dispatch({ type: API_REQUEST_SUCCESS });
+  } catch (error) {
+    dispatch({ type: API_REQUEST_FAILURE, payload: error.response.data.error });
+  }
+};

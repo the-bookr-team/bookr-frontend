@@ -71,7 +71,11 @@ class Book extends Component {
         <div className="reviews">
           <h2>Reviews</h2>
           {reviews.map(review => (
-            <Review review={review} key={review.id} updatePage={this.updatePage} />
+            <Review
+              key={review.id}
+              review={review}
+              book={this.state.book}
+              updatePage={this.updatePage} />
           ))}
         </div>
       </div>
