@@ -59,7 +59,7 @@ class Book extends Component {
                 <Login
                   buttonLabel={
                     <Button className="sign-in-button" outline color="primary">
-                      Sign in
+                      Sign In to Add Review
                     </Button>
                   }
                 />
