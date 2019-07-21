@@ -23,7 +23,10 @@ export const login = authData => async dispatch => {
       username: authData.username,
       token
     }))
-    dispatch({ type: LOGIN_SUCCESS, payload: token })
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: { authToken: token, username: authData.username }
+    })
   } catch (error) {
     dispatch({ type: LOGIN_FAILURE, payload: error.response.data.error });
   }
@@ -96,7 +99,7 @@ export const deleteReview = reviewId => async dispatch => {
     const { data } = await axios.delete(
       `${BOOKR_API_DOMAIN}/api/reviews/${reviewId}`
     );
-    dispatch({ type: API_REQUEST_SUCCESS, payload: data });
+    dispatch({ type: API_REQUEST_SUCCESS });
   } catch (error) {
     dispatch({ type: API_REQUEST_FAILURE, payload: error.response.data.error });
   }

@@ -18,7 +18,11 @@ class Book extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.updatePage();
+  }
+
+  updatePage = async () => {
     const { id } = this.props.match.params;
     const [book, reviews] = await fetchBook(id);
     this.setState({
@@ -67,7 +71,7 @@ class Book extends Component {
         <div className="reviews">
           <h2>Reviews</h2>
           {reviews.map(review => (
-            <Review review={review} key={review.id} />
+            <Review review={review} key={review.id} updatePage={this.updatePage} />
           ))}
         </div>
       </div>
