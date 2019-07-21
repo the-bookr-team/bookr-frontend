@@ -1,12 +1,13 @@
 export const settings = {
   // dots: true,
+  arrows: false,
   infinite: true,
   centerMode: true,
   variableWidth: true,
   adaptiveHeight: true,
   autoplay: true,
   autoplaySpeed: 3000,
-  speed: 300,
+  speed: 500,
   slidesToShow: 5,
   slidesToScroll: 1,
   responsive: [
