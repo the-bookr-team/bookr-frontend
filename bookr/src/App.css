@@ -27,10 +27,18 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: auto;
   padding: 20px 50px;
   background-color: white;
   box-shadow: 0 4px 8px lightgrey;
   position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    background-color: lightblue;
+  }
 }
 
 .header nav {
