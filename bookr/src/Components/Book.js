@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import StaticRating from './Stars/StaticRating';
+import { calculateAvgRating  } from '../utils';
 
 import { fetchBook } from '../utils';
 
@@ -41,6 +43,11 @@ class Book extends Component {
           <div className="book-header__details">
             <h1>{title}</h1>
             <h2>By: {author}</h2>
+
+
+            <h2>Avg. Rating: <StaticRating value={calculateAvgRating(reviews)} /></h2>
+
+
             <Button color="primary">Purchase Now</Button>
             {this.props.isAuthenticated && (
               <Link
