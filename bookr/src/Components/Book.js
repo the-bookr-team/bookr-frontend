@@ -12,7 +12,7 @@ class Book extends Component {
     super(props);
     this.state = {
       book: null,
-      reviews: [],
+      reviews: []
     };
   }
 
@@ -30,41 +30,33 @@ class Book extends Component {
       return <p>Loading...</p>;
     }
 
-    const {
-      id,
-      author,
-      book_img,
-      title,
-    } = this.state.book;
+    const { id, author, book_img, title } = this.state.book;
     const { reviews } = this.state;
 
     return (
       <div className="page-container">
         <div className="book-header">
           <img src={book_img} alt={title} />
-  
+
           <div className="book-header__details">
             <h1>{title}</h1>
             <h2>By: {author}</h2>
             <Button color="primary">Purchase Now</Button>
-            {this.props.isAuthenticated &&
+            {this.props.isAuthenticated && (
               <Link
                 to={{
                   pathname: `/book/${id}/review`,
                   state: this.state.book
                 }}
               >
-                <Button
-                  outline
-                  color="primary"
-                >
+                <Button outline color="primary">
                   Add a Review
                 </Button>
               </Link>
-            }
+            )}
           </div>
         </div>
-  
+
         <div className="reviews">
           <h2>Reviews</h2>
           {reviews.map(review => (
@@ -74,10 +66,10 @@ class Book extends Component {
       </div>
     );
   }
-};
+}
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.isAuthenticated,
+  isAuthenticated: state.isAuthenticated
 });
 
 export default withRouter(connect(mapStateToProps)(Book));
