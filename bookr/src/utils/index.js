@@ -12,3 +12,10 @@ export const fetchBook = async id => {
     throw new Error(error)
   }
 }
+
+export const calculateAvgRating = reviews => {
+  const numReviews = reviews.length
+  const sum = reviews.reduce((acc, curr) => { return curr.rating + acc }, 0)
+  const avgRating = Math.round(sum / numReviews)
+  return avgRating
+}

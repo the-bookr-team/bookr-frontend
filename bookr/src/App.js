@@ -16,6 +16,7 @@ import { connect } from 'react-redux';
 const HomePage = () => (
   <main>
     <LandingHero />
+    <h3>Featured Books</h3>
     <BookCarousel />
     <CollectionItemContainer />
   </main>
@@ -36,12 +37,14 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Route exact path="/" component={HomePage} />
-        {/* TODO - implement dynamic routing (i.e. `/book/:bookId)` */}
-        {/* Source: https://reacttraining.com/react-router/web/api/Route/route-props */}
-        <Route exact path="/book/:id" component={BookDetailPage} />
-        <Route path="/book/:id/review" component={AddReview} />
-        <Route path="/about" component={About} />
+        <div className="app-body">
+          <Route exact path="/" component={HomePage} />
+          {/* TODO - implement dynamic routing (i.e. `/book/:bookId)` */}
+          {/* Source: https://reacttraining.com/react-router/web/api/Route/route-props */}
+          <Route exact path="/book/:id" component={BookDetailPage} />
+          <Route path="/book/:id/review" component={AddReview} />
+          <Route path="/about" component={About} />
+        </div>
         <Footer />
       </div>
     );

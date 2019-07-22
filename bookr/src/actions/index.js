@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+export const LOGOUT = 'LOGOUT'
 export const LOGIN_START = 'LOGIN_START'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
@@ -22,7 +23,10 @@ export const login = authData => async dispatch => {
       username: authData.username,
       token
     }))
-    dispatch({ type: LOGIN_SUCCESS, payload: token })
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: { authToken: token, username: authData.username }
+    })
   } catch (error) {
     dispatch({ type: LOGIN_FAILURE, payload: error.response.data.error });
   }
@@ -39,6 +43,11 @@ export const register = authData => async dispatch => {
   } catch (error) {
     dispatch({ type: REGISTRATION_FAILURE })
   }
+}
+
+export const logout = () => dispatch => {
+  localStorage.clear()
+  dispatch({ type: LOGOUT })
 }
 
 export const getBooks = () => async dispatch => {
@@ -78,7 +87,7 @@ export const addReview = (bookId, review) => async dispatch => {
         }
       }
     );
-    dispatch({ type: API_REQUEST_SUCCESS, payload: data });
+    dispatch({ type: API_REQUEST_SUCCESS });
   } catch (error) {
     dispatch({ type: API_REQUEST_FAILURE, payload: error.response.data.error });
   }
@@ -90,7 +99,20 @@ export const deleteReview = reviewId => async dispatch => {
     const { data } = await axios.delete(
       `${BOOKR_API_DOMAIN}/api/reviews/${reviewId}`
     );
-    dispatch({ type: API_REQUEST_SUCCESS, payload: data });
+    dispatch({ type: API_REQUEST_SUCCESS });
+  } catch (error) {
+    dispatch({ type: API_REQUEST_FAILURE, payload: error.response.data.error });
+  }
+};
+
+export const editReview = (reviewId, newReview) => async dispatch => {
+  dispatch({ type: API_REQUEST_START });
+  try {
+    const { data } = await axios.put(
+      `${BOOKR_API_DOMAIN}/api/reviews/${reviewId}`,
+      newReview
+    );
+    dispatch({ type: API_REQUEST_SUCCESS });
   } catch (error) {
     dispatch({ type: API_REQUEST_FAILURE, payload: error.response.data.error });
   }

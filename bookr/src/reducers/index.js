@@ -1,4 +1,5 @@
 import {
+  LOGOUT,
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
@@ -26,6 +27,14 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    case LOGOUT:
+      return {
+        ...state,
+        username: '',
+        userId: null,
+        authToken: '',
+        isAuthenticated: false,
+      }
     case LOGIN_START:
       return {
         ...state,
@@ -36,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         isLoggingIn: false,
         isAuthenticated: true,
-        authToken: action.payload
+        ...action.payload
       };
     case LOGIN_FAILURE:
       return {
@@ -70,7 +79,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         makingAPIReqeust: false,
-        books: action.payload
+        books: action.payload || state.books
       };
     case API_REQUEST_FAILURE:
       return {

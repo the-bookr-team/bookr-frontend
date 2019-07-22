@@ -3,12 +3,14 @@
 .font-secondary {
   font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
 }
+.app-body {
+  max-width: 1354px;
+  margin: 0 auto;
+}
 
 .App .bookr-hero.bg-salmon {
   background: #f3c6bd;
-}
-
-.App .bookr-hero h1 {
+  margin-top: 2rem;
 }
 
 h2 {
@@ -22,6 +24,8 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: auto;
   padding: 20px 50px;
   background-color: white;
   box-shadow: 0 4px 8px lightgrey;
@@ -32,14 +36,16 @@ h2 {
   display: flex;
   width: 40%;
   justify-content: space-between;
+  align-items: center;
 }
 
-.header nav a {
+.header nav .nav-item {
+  font-size: 16px !important;
   color: #2b292d;
   text-decoration: none;
 }
 
-.header nav a:hover {
+.header nav .nav-item:hover {
   text-decoration: underline;
 }
 
@@ -55,14 +61,16 @@ footer nav {
   width: 80%;
   margin: auto;
   justify-content: space-around;
+  align-items: center;
 }
 
-footer nav a {
+footer nav .nav-item {
+  font-size: 16px !important;
   color: white;
   text-decoration: none;
 }
 
-footer nav a:hover {
+footer nav .nav-item:hover {
   color: white;
   text-decoration: underline;
 }
@@ -81,8 +89,9 @@ footer nav a:hover {
   background-color: white;
   padding: 20px 70px;
   box-shadow: 0 0 16px lightgrey;
-  width: 90%;
-  margin: 0 auto 4rem;
+  border-radius: 5px;
+  width: 100%;
+  margin: 2rem 0;
 }
 
 .collection-item {
@@ -119,12 +128,12 @@ footer nav a:hover {
   margin-bottom: 34px;
 }
 
+/* Book Carousel CSS */
 .carousel-wrapper {
   align-self: center;
-  max-width: 90rem;
-  margin: 0 auto;
   padding-top: 0.5rem;
   background-color: #282c34;
+  border-radius: 5px;
 }
 
 .slick-slide {
@@ -137,8 +146,16 @@ footer nav a:hover {
 
 .slide-image {
   height: 25rem;
-  width: 18rem;
+  width: 17rem;
+  border-radius: 5px;
 }
+
+/* .slick-prev:before {
+  color: #007bff;
+}
+.slick-next:before {
+  color: #007bff;
+} */
 
 .book-header {
   display: flex;
@@ -171,6 +188,14 @@ footer nav a:hover {
   display: inline-block;
   margin-top: 1rem;
   margin-right: 1rem;
+}
+
+.page-container .book-header .book-header__details .button-wrapper {
+  display: flex;
+}
+
+.sign-in-button {
+  width: 126px;
 }
 
 .reviews {

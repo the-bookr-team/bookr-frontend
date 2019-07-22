@@ -40,10 +40,25 @@ class Login extends React.Component {
 
   buttonOrLink = (button = false) => {
     if (button) {
-      return(<Button color="primary" onClick={this.toggle}>{this.props.buttonLabel}</Button>)
+      return (
+        <Button 
+          color="primary" 
+          onClick={this.toggle}
+        >
+          {this.props.buttonLabel}
+        </Button>
+      )
     };
 
-    return(<a href="#" onClick={this.toggle}>{this.props.buttonLabel}</a>)
+    return (
+      <a 
+        className="nav-item" 
+        href="#" 
+        onClick={this.toggle}
+      >
+        {this.props.buttonLabel}
+      </a>
+    )
   }
 
   handleChange = e => {
@@ -60,6 +75,7 @@ class Login extends React.Component {
         password: this.state.loginPassword
       }
       this.props.login(authData)
+      this.toggle()
     } else {
       this.setState({ registrationInitiated: true })
       const authData = {
