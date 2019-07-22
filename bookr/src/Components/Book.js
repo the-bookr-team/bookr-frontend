@@ -5,9 +5,10 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import StaticRating from './Stars/StaticRating';
-import { calculateAvgRating  } from '../utils';
+import { calculateAvgRating } from '../utils';
 
 import { fetchBook } from '../utils';
+import Login from './Login';
 
 class Book extends Component {
   constructor(props) {
@@ -47,24 +48,33 @@ class Book extends Component {
           <div className="book-header__details">
             <h1>{title}</h1>
             <h2>By: {author}</h2>
-
-
-            <h2>Avg. Rating: <StaticRating value={calculateAvgRating(reviews)} /></h2>
-
-
-            <Button color="primary">Purchase Now</Button>
-            {this.props.isAuthenticated && (
-              <Link
-                to={{
-                  pathname: `/book/${id}/review`,
-                  state: this.state.book
-                }}
-              >
-                <Button outline color="primary">
-                  Add a Review
-                </Button>
-              </Link>
-            )}
+            <div className="button-wrapper">
+              <h2>
+                Avg. Rating:{' '}
+                <StaticRating value={calculateAvgRating(reviews)} />
+              </h2>
+              <Button color="primary">Purchase Now</Button>
+              {this.props.isAuthenticated ? (
+                <Link
+                  to={{
+                    pathname: `/book/${id}/review`,
+                    state: this.state.book
+                  }}
+                >
+                  <Button outline color="primary">
+                    Add a Review
+                  </Button>
+                </Link>
+              ) : (
+                <Login
+                  buttonLabel={
+                    <Button className="sign-in-button" outline color="primary">
+                      Sign In to Add Review
+                    </Button>
+                  }
+                />
+              )}
+            </div>
           </div>
         </div>
 

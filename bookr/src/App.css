@@ -13,9 +13,6 @@
   margin-top: 2rem;
 }
 
-.App .bookr-hero h1 {
-}
-
 h2 {
   font-family: Roboto, sans-serif;
   font-size: 1.6rem;
@@ -27,6 +24,8 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: auto;
   padding: 20px 50px;
   background-color: white;
   box-shadow: 0 4px 8px lightgrey;
@@ -189,6 +188,14 @@ footer nav .nav-item:hover {
   display: inline-block;
   margin-top: 1rem;
   margin-right: 1rem;
+}
+
+.page-container .book-header .book-header__details .button-wrapper {
+  display: flex;
+}
+
+.sign-in-button {
+  width: 126px;
 }
 
 .reviews {
