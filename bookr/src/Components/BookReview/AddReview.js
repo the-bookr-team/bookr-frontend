@@ -14,12 +14,12 @@ class AddReview extends Component {
       rating: null,
       review: '',
       value: 0,
-      username: '',
+      username: ''
     };
   }
 
   async componentDidMount() {
-    const { username } = JSON.parse(localStorage.getItem('auth'))
+    const { username } = JSON.parse(localStorage.getItem('auth'));
     const { id } = this.props.match.params;
     const [book, reviews] = await fetchBook(id);
     if (!this.props.location.state) {
@@ -29,13 +29,13 @@ class AddReview extends Component {
         username,
         book,
         ...this.props.location.state
-      })
+      });
     }
   }
 
   handleReview = e => {
     e.preventDefault();
-    this.setState({ review: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleRatingChange = value => {
@@ -51,9 +51,10 @@ class AddReview extends Component {
       review: this.state.review,
       rating: this.state.value
     };
+    console.log(this.state.username);
     setTimeout(async () => {
       if (this.props.location.state.editingReview) {
-        const reviewId = this.props.location.state.id
+        const reviewId = this.props.location.state.id;
         await this.props.editReview(reviewId, newReview);
       } else {
         await this.props.addReview(id, newReview);
@@ -64,22 +65,24 @@ class AddReview extends Component {
 
   render() {
     return (
-      <div className="add-review-wrapper">
-        <ReviewDetails book={this.state.book} />
-        <div className="star-rating-wrapper">
-          <h3>Rating (1-5 stars)</h3>
-          <Rater
-            handleRatingChange={this.handleRatingChange}
-            value={this.state.value}
+      <div className="page-container">
+        <div className="add-review-wrapper">
+          <ReviewDetails book={this.state.book} />
+          <div className="star-rating-wrapper">
+            <h3>Rating (1-5 stars)</h3>
+            <Rater
+              handleRatingChange={this.handleRatingChange}
+              value={this.state.value}
+            />
+          </div>
+          <ReviewForm
+            {...this.props}
+            book={this.state.book}
+            review={this.state.review}
+            handleRatingSubmit={this.handleRatingSubmit}
+            handleReview={this.handleReview}
           />
         </div>
-        <ReviewForm
-          {...this.props}
-          book={this.state.book}
-          review={this.state.review}
-          handleRatingSubmit={this.handleRatingSubmit}
-          handleReview={this.handleReview}
-        />
       </div>
     );
   }
@@ -92,13 +95,12 @@ const ReviewDetails = props => {
 
   const { book_img, title, author } = props.book;
   return (
-    <div className="title-wrapper">
+    <div className="book-header">
       <img src={book_img} alt={title} />
-      <div className="title-author">
-        <h3 className="review-title">Add a Review for: {title}</h3>
-        <p className="author">
-          Author: <em>{author}</em>
-        </p>
+
+      <div className="book-header__details">
+        <h1>{title}</h1>
+        <h2>By: {author}</h2>
       </div>
     </div>
   );
@@ -115,6 +117,7 @@ const ReviewForm = props => {
       <h3>What did you think?</h3>
       <form className="review-form" onSubmit={props.handleRatingSubmit}>
         <textarea
+          name="review"
           value={props.review}
           onChange={props.handleReview}
           placeholder={`Write a review of ${title}`}

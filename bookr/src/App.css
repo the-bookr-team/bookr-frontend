@@ -203,6 +203,10 @@ footer nav .nav-item:hover {
 }
 
 .review {
+  /* display: flex;
+  flex-direction: column; */
+  width: 100%;
+  min-height: 5rem;
   margin: 0 auto 2rem;
 }
 
@@ -215,10 +219,25 @@ footer nav .nav-item:hover {
 }
 
 .reviewer {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: underline;
+  line-height: 15px;
   font-family: Lora, serif;
   font-style: italic;
   font-size: 1rem;
+  margin-bottom: 0.25rem;
+  padding-top: 0.5rem;
+}
+
+.review-text {
+  margin-bottom: 1rem;
+}
+
+.fas,
+.far {
+  padding: 0 0.25rem 0 0.25rem;
+  margin-top: 0;
 }
 
 .modal-title {
@@ -296,7 +315,7 @@ footer nav .nav-item:hover {
 
 .review-form-wrapper .review-form textarea {
   height: 100%;
-  width: 100%;
+  width: 90%;
   padding: 1rem;
 }
 
