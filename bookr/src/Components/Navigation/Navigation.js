@@ -7,6 +7,8 @@ import Login from '../Login';
 
 import { logout } from '../../actions';
 
+import './navigation.css'
+
 const Navigation = props => {
   return (
     <nav>

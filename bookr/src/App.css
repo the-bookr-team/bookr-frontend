@@ -27,23 +27,6 @@ h2 {
 	position: relative;
 }
 
-.header nav {
-	display: flex;
-	width: 40%;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.header nav .nav-item {
-	font-size: 16px !important;
-	color: #2b292d;
-	text-decoration: none;
-}
-
-.header nav .nav-item:hover {
-	text-decoration: underline;
-}
-
 footer {
 	display: flex;
 	justify-content: space-between;
