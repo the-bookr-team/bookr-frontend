@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Review = props => {
   const authenticatedUserEqualsReviewer = () =>
     props.username === props.review.reviewer;
-  return(
+  return (
     <div className="review">
       {props.review.review}
 
@@ -15,16 +15,20 @@ const Review = props => {
       <span className="reviewer">{props.review.reviewer}</span>
       {props.isAuthenticated && authenticatedUserEqualsReviewer() && (
         <>
-          <Link to={{
-            pathname: `/book/${props.book.id}/review`,
-            state: {
-              editingReview: true,
-              id: props.review.id,
-              value: props.review.rating,
-              review: props.review.review
-            }
-          }}>
-            <Button size="sm" color="secondary">Edit</Button>{' '}
+          <Link
+            to={{
+              pathname: `/book/${props.book.id}/review`,
+              state: {
+                editingReview: true,
+                id: props.review.id,
+                value: props.review.rating,
+                review: props.review.review
+              }
+            }}
+          >
+            <Button size="sm" color="secondary">
+              Edit
+            </Button>{' '}
           </Link>
           <Button
             size="sm"
@@ -39,12 +43,15 @@ const Review = props => {
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
 const mapStateToProps = state => ({
   isAuthenticated: state.isAuthenticated,
   username: state.username
 });
 
-export default connect(mapStateToProps, { deleteReview })(Review);
+export default connect(
+  mapStateToProps,
+  { deleteReview }
+)(Review);

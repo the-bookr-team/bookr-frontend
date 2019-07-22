@@ -30,7 +30,7 @@ class Book extends Component {
       book,
       reviews
     });
-  }
+  };
 
   render() {
     if (!this.state.book) {
@@ -48,11 +48,10 @@ class Book extends Component {
           <div className="book-header__details">
             <h1>{title}</h1>
             <h2>By: {author}</h2>
+            <h2>
+              Avg. Rating: <StaticRating value={calculateAvgRating(reviews)} />
+            </h2>
             <div className="button-wrapper">
-              <h2>
-                Avg. Rating:{' '}
-                <StaticRating value={calculateAvgRating(reviews)} />
-              </h2>
               <Button color="primary">Purchase Now</Button>
               {this.props.isAuthenticated ? (
                 <Link
@@ -85,7 +84,8 @@ class Book extends Component {
               key={review.id}
               review={review}
               book={this.state.book}
-              updatePage={this.updatePage} />
+              updatePage={this.updatePage}
+            />
           ))}
         </div>
       </div>

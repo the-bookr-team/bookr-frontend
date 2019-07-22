@@ -166,6 +166,7 @@ footer nav .nav-item:hover {
 .book-header img {
   display: block;
   width: 30%;
+  margin-bottom: 1rem;
 }
 
 .book-header__details {
@@ -296,7 +297,7 @@ footer nav .nav-item:hover {
 
 .review-form-wrapper .review-form textarea {
   height: 100%;
-  width: 100%;
+  width: 90%;
   padding: 1rem;
 }
 
