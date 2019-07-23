@@ -7,6 +7,8 @@ import Login from '../Login';
 
 import { logout } from '../../actions';
 
+import './navigation.css'
+
 const Navigation = props => {
   return (
     <nav>
@@ -14,12 +16,12 @@ const Navigation = props => {
         Home
       </Link>
       <Link className="nav-item" to="/about">
-        About us
+        About Us
       </Link>
       {!props.isAuthenticated ? (
         <>
-          <Login buttonLabel="Sign in" className="login" />
-          <Login buttonLabel="Get started" className="login" />
+          <Login buttonLabel="Sign In" className="login" />
+          <Login buttonLabel="Get Started" className="login" />
         </>
       ) : (
         <Link to={{ pathname: '/' }}>
