@@ -17,11 +17,16 @@ import { connect } from 'react-redux';
 const HomePage = () => (
 	<main>
 		<LandingHero />
-		<div className="container-search">
-			<Searchbar />
+		<div className="container-h2">
+			<h2>Featured Books</h2>
 		</div>
-		<h3>Featured Books</h3>
 		<BookCarousel />
+		<div className="container-h2">
+			<h2>Browse Collection</h2>
+			<div className="container-search">
+				<Searchbar />
+			</div>
+		</div>
 		<CollectionItemContainer />
 	</main>
 );

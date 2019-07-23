@@ -19,8 +19,6 @@ h2 {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
-	height: auto;
 	padding: 20px 50px;
 	background-color: white;
 	box-shadow: 0 4px 8px lightgrey;
@@ -34,6 +32,20 @@ h2 {
 	border-radius: 5px;
 	width: 100%;
 	margin: 2rem 0;
+}
+
+.container-search {
+	letter-spacing: 1px;
+}
+
+.container-h2 {
+	letter-spacing: 5px;
+	font-weight: bold;
+	padding: 10px 0;
+	text-shadow: 1px 1px rgb(211, 211, 211);
+	width: auto;
+	display: flex;
+	align-items: flex-end;
 }
 
 .collection-item {
@@ -69,35 +81,6 @@ h2 {
 	font-family: Roboto, sans-serif;
 	margin-bottom: 34px;
 }
-
-/* Book Carousel CSS */
-.carousel-wrapper {
-	align-self: center;
-	padding-top: 0.5rem;
-	background-color: #282c34;
-	border-radius: 5px;
-}
-
-.slick-slide {
-	opacity: 0.2;
-}
-
-.slick-slide.slick-active.slick-current {
-	opacity: 1;
-}
-
-.slide-image {
-	height: 25rem;
-	width: 17rem;
-	border-radius: 5px;
-}
-
-/* .slick-prev:before {
-  color: #007bff;
-}
-.slick-next:before {
-  color: #007bff;
-} */
 
 .book-header {
 	display: flex;

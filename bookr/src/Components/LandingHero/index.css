@@ -1,9 +1,9 @@
 .bookr-hero {
 	background: #f3c6bd;
 	position: relative;
-	height: 220px;
-	width: 70%;
-	margin: 15px auto 30px;
+	height: 250px;
+	width: 100%;
+	margin: 25px auto 30px;
 }
 .jumbotron {
 	border-radius: 5px;
@@ -21,6 +21,6 @@
 }
 
 .hero-img {
-	width: 62%;
-	margin-left: 15%;
+	width: 70%;
+	margin-left: 10%;
 }

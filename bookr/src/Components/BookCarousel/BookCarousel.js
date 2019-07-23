@@ -4,29 +4,28 @@ import Slider from 'react-slick';
 import { settings } from './BookCarouselSettings';
 import { connect } from 'react-redux';
 
-const BookCarousel = props => {
-  const slides = props.books.map(item => {
-    return (
-      <div className="solo-slide" key={item.book_img}>
-        <img className="slide-image" src={item.book_img} alt={item.title} />
-      </div>
-    );
-  });
+import './index.css';
 
-  return (
-    <div className="carousel-wrapper">
-      <Slider {...settings}>{slides}</Slider>
-    </div>
-  );
+const BookCarousel = (props) => {
+	const slides = props.books.map((item) => {
+		return (
+			<div className="solo-slide" key={item.book_img}>
+				<img className="slide-image" src={item.book_img} alt={item.title} />
+			</div>
+		);
+	});
+
+	return (
+		<div className="carousel-wrapper">
+			<Slider {...settings}>{slides}</Slider>
+		</div>
+	);
 };
 
-const mapStateToProps = state => {
-  return {
-    books: state.books
-  };
+const mapStateToProps = (state) => {
+	return {
+		books: state.books
+	};
 };
 
-export default connect(
-  mapStateToProps,
-  {}
-)(BookCarousel);
+export default connect(mapStateToProps, {})(BookCarousel);

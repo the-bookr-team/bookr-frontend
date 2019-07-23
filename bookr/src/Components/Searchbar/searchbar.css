@@ -1,17 +1,18 @@
 .searchbar {
 	margin-left: 50px;
-	padding: 40px;
+	padding: 30px 10px 10px 10px;
 	width: 400px;
-	height: 100px;
 	display: flex;
-	position: relative;
-	justify-content: center;
+	align-items: center;
+	justify-items: center;
 	align-self: center;
 	align-content: center;
+	/* text-align: center; */
 	letter-spacing: 1;
 }
 
 .search-icon {
+	margin-top: 10px;
 	margin-right: 10px;
 }
 
