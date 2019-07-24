@@ -7,6 +7,8 @@ import Login from '../Login';
 
 import { logout } from '../../actions';
 
+import './navigation.css'
+
 const Navigation = props => {
   return (
     <nav>
@@ -23,9 +25,9 @@ const Navigation = props => {
         </>
       ) : (
         <Link to={{ pathname: '/' }}>
-          <Button color="link" className="nav-item" onClick={props.logout}>
+          <a className="nav-item logout" onClick={props.logout}>
             Logout
-          </Button>
+          </a>
         </Link>
       )}
     </nav>

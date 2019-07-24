@@ -1,0 +1,35 @@
+footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 50px;
+	background-color: gray;
+}
+
+footer nav {
+	display: flex;
+	width: 80%;
+	margin: auto;
+	justify-content: space-around;
+	align-items: center;
+}
+
+footer nav .nav-item {
+	font-size: 16px !important;
+	color: white;
+	text-decoration: none;
+}
+
+footer nav .nav-item:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+.credits {
+	padding: 10px 0 30px;
+	text-align: center;
+	font-size: 0.9rem;
+	font-style: italic;
+	background-color: gray;
+	border-top: 1px solid lightgray;
+	color: lightgray;
+}

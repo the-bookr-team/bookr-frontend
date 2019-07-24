@@ -1,0 +1,25 @@
+.header nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header nav a {
+	color: #2b292d;
+	margin: 0 10px;
+	text-decoration: none;
+}
+
+.header nav a:hover {
+	text-decoration: underline;
+	color: #000;
+	font-weight: 500;
+}
+
+a:not([href]):not([tabindex]) {
+	color: #9e0000;
+	margin: 0;
+}
+
+a:not([href]):not([tabindex]):hover {
+	color: #9e0000;
+}
