@@ -22,7 +22,7 @@ const teamMembers = [
 	{
 		id: 2,
 		name: 'Justin Andrade',
-		role: 'Backend Developer',
+		role: 'Full Stack Engineer',
 		bio:
 			"I currently reside in the Boston, Massachusetts area, however I'm willing to relocate. A team player who understands the importance of communcation as-well as succeeding together. My goal oriented mindset allows me to prioritize tasks and develop a strategic way of problem solving.",
 
