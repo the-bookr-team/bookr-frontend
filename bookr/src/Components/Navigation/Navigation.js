@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../../App.css';
-import Login from '../Login';
+import Login from '../Login/Login';
 
 import { logout } from '../../actions';
 
@@ -20,8 +20,7 @@ const Navigation = props => {
       </Link>
       {!props.isAuthenticated ? (
         <>
-          <Login buttonLabel="Sign In" className="login" />
-          <Login buttonLabel="Get Started" className="login" />
+          <Login />
         </>
       ) : (
         <Link to={{ pathname: '/' }}>

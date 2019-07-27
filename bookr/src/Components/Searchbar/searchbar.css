@@ -1,7 +1,7 @@
 .searchbar {
 	margin-left: 50px;
 	padding: 30px 10px 10px 10px;
-	width: 400px;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-items: center;
@@ -17,12 +17,13 @@
 }
 
 .searchbar input {
-	width: 100%;
+	width: 280px;
 	border-radius: 25px;
 	border: 1px solid darkgrey;
 	background: #f1f1f1;
 	text-align: center;
 	letter-spacing: 5px;
+	position: relative;
 }
 
 .message {
@@ -44,10 +45,10 @@
 	cursor: pointer;
 }
 .text {
-	font-size: 10px;
-	position: relative;
-	margin: 0 20px;
-	width: 400px;
+	font-size: 0.5rem;
+	position: absolute;
+	margin: 5px 20px;
+	top: 0;
 }
 
 .ui {
