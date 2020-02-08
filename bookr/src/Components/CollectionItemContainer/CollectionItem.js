@@ -1,6 +1,6 @@
-import React from 'react';
-import StaticRating from '../Stars/StaticRating';
-import { calculateAvgRating } from '../../utils';
+import React from "react";
+import StaticRating from "../Stars/StaticRating";
+import { calculateAvgRating } from "../../utils";
 
 const CollectionItem = props => {
   return (
@@ -12,15 +12,14 @@ const CollectionItem = props => {
       />
 
       <div className="collection-item__details">
+        <div className="collection-item__rating">
+          <span>Avg. Rating: </span>
+          <StaticRating value={calculateAvgRating(props.book.reviews)} />
+        </div>
         <h3>{props.book.title}</h3>
 
         <div className="collection-item__author">
           {props.book.author} &middot; {props.book.publisher}
-        </div>
-
-        <div className="collection-item__rating">
-          Avg. Rating:{' '}
-          <StaticRating value={calculateAvgRating(props.book.reviews)} />
         </div>
       </div>
     </div>
