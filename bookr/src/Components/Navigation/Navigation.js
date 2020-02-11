@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../../App.css";
 import Login from "../Login/Login";

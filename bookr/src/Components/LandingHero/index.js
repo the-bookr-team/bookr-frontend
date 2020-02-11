@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Jumbotron, Row, Col } from "reactstrap";
-import Login from "../Login/Login";
 
 import heroImg from "../../assets/hero-img.png";
 

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { getBooks } from "../../actions";
 
 const CollectionItemContainer = props => {
-  useEffect(() => {
+  useEffect(props => {
     props.getBooks();
   }, []);
 

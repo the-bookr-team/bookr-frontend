@@ -10,7 +10,6 @@ import {
   Input,
   FormText,
   Modal,
-  ModalHeader,
   ModalBody
 } from "reactstrap";
 
@@ -114,7 +113,7 @@ class Login extends React.Component {
         >
           <ModalBody>
             <div className="modal-container">
-              <img src={modalImage} />
+              <img src={modalImage} alt="login character" />
               <div className="modal-info">
                 <div>
                   <button
@@ -220,7 +219,7 @@ class Login extends React.Component {
         >
           <ModalBody>
             <div className="modal-container">
-              <img src={modalImage} />
+              <img src={modalImage} alt="login character" />
               <div className="modal-info">
                 <div>
                   <button

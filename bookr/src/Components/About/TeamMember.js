@@ -1,6 +1,5 @@
 import React from "react";
 import { GitHub, Linkedin, Twitter } from "react-feather";
-import { Link } from "react-router-dom";
 
 const TeamMember = props => {
   return (
@@ -16,13 +15,28 @@ const TeamMember = props => {
         <p>{props.member.bio}</p>
 
         <div className="social-links">
-          <a className="github" href={props.member.github} target="_blank">
+          <a
+            className="github"
+            href={props.member.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GitHub color="none" fill="gray" />
           </a>
-          <a className="linked-in" href={props.member.linkedin} target="_blank">
+          <a
+            className="linked-in"
+            href={props.member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Linkedin color="none" fill="gray" />
           </a>
-          <a className="twitter" href={props.member.twitter} target="_blank">
+          <a
+            className="twitter"
+            href={props.member.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Twitter color="none" fill="gray" />
           </a>
         </div>

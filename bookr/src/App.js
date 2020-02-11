@@ -7,7 +7,6 @@ import Book from "./Components/Book";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer/Footer";
 import About from "./Components/About/About";
-import Searchbar from "./Components/Searchbar/Searchbar";
 import CollectionItemContainer from "./Components/CollectionItemContainer/CollectionItemContainer";
 import { getBooks } from "./actions";
 

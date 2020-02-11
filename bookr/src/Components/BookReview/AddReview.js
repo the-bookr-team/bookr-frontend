@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Button } from 'reactstrap';
-import Rater from '../Stars/Stars2';
+import React, { Component } from "react";
+import { Button } from "reactstrap";
+import Rater from "../Stars/Stars2";
 
-import { addReview, editReview } from '../../actions';
-import { fetchBook } from '../../utils';
-import { connect } from 'react-redux';
+import { addReview, editReview } from "../../actions";
+import { fetchBook } from "../../utils";
+import { connect } from "react-redux";
 
 class AddReview extends Component {
   constructor(props) {
@@ -12,16 +12,16 @@ class AddReview extends Component {
     this.state = {
       book: null,
       rating: null,
-      review: '',
+      review: "",
       value: 0,
-      username: ''
+      username: ""
     };
   }
 
   async componentDidMount() {
-    const { username } = JSON.parse(localStorage.getItem('auth'));
+    const { username } = JSON.parse(localStorage.getItem("auth"));
     const { id } = this.props.match.params;
-    const [book, reviews] = await fetchBook(id);
+    const [book] = await fetchBook(id);
     if (!this.props.location.state) {
       this.setState({ book, username });
     } else {
@@ -123,7 +123,7 @@ const ReviewForm = props => {
           placeholder={`Write a review of ${title}`}
         />
         <Button color="primary" className="form-button" type="submit">
-          {editingReview ? 'Update Review' : 'Submit Review'}
+          {editingReview ? "Update Review" : "Submit Review"}
         </Button>
       </form>
     </div>
@@ -135,7 +135,4 @@ const mapStateToProps = state => ({
   userId: state.userId
 });
 
-export default connect(
-  mapStateToProps,
-  { addReview, editReview }
-)(AddReview);
+export default connect(mapStateToProps, { addReview, editReview })(AddReview);
