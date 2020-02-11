@@ -1,13 +1,15 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import '../../App.css';
-import Login from '../Login';
+import React from "react";
+import { connect } from "react-redux";
+import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
+import "../../App.css";
+import Login from "../Login/Login";
 
-import { logout } from '../../actions';
+import { logout } from "../../actions";
 
-import './navigation.css'
+import "./navigation.css";
+
+import "./navigation.css";
 
 const Navigation = props => {
   return (
@@ -20,14 +22,13 @@ const Navigation = props => {
       </Link>
       {!props.isAuthenticated ? (
         <>
-          <Login buttonLabel="Sign In" className="login" />
-          <Login buttonLabel="Get Started" className="login" />
+          <Login />
         </>
       ) : (
-        <Link to={{ pathname: '/' }}>
-          <Button color="link" className="nav-item" onClick={props.logout}>
+        <Link to={{ pathname: "/" }}>
+          <a className="nav-item logout" onClick={props.logout}>
             Logout
-          </Button>
+          </a>
         </Link>
       )}
     </nav>
@@ -38,7 +39,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.isAuthenticated
 });
 
-export default connect(
-  mapStateToProps,
-  { logout }
-)(Navigation);
+export default connect(mapStateToProps, { logout })(Navigation);

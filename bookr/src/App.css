@@ -1,260 +1,264 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 .font-secondary {
-	font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
+  font-family: "Lora", Georgia, "Times New Roman", Times, serif;
 }
 .app-body {
-	max-width: 1354px;
-	margin: 0 auto;
+  padding: 2%;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 h2 {
-	font-family: Roboto, sans-serif;
-	font-size: 1.6rem;
-	font-weight: bold;
+  font-family: Roboto, sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px 50px;
-	background-color: white;
-	box-shadow: 0 4px 8px lightgrey;
-	position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: white;
+  box-shadow: 0 4px 8px lightgrey;
+  position: relative;
 }
 
 .page-container {
-	background-color: white;
-	padding: 20px 70px;
-	box-shadow: 0 0 16px lightgrey;
-	border-radius: 5px;
-	width: 100%;
-	margin: 2rem 0;
+  background-color: white;
+  padding: 3% 5%;
+  box-shadow: 0 0 16px lightgrey;
+  border-radius: 5px;
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-container .book {
+  height: 550px;
+  width: 25%;
 }
 
 .container-search {
-	letter-spacing: 1px;
+  letter-spacing: 1px;
 }
 
 .container-h2 {
-	letter-spacing: 5px;
-	font-weight: bold;
-	padding: 10px 0;
-	text-shadow: 1px 1px rgb(211, 211, 211);
-	width: auto;
-	display: flex;
-	align-items: flex-end;
+  letter-spacing: 5px;
+  font-weight: bold;
+  padding: 5px 0;
+  text-shadow: 1px 1px rgb(211, 211, 211);
 }
 
 .collection-item {
-	display: flex;
-	align-items: center;
-	font-size: 24px;
-	padding: 20px 0;
-	width: 95%;
-	border-bottom: 1px solid #e5e5e5;
-	margin: auto;
-}
-
-.collection-item:last-child {
-	border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  font-size: 16px;
+  padding: 2% 0;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 10% auto;
+  position: relative;
 }
 
 .collection-item__cover {
-	width: 182px;
-	height: 276px;
-	display: block;
-	margin-right: 30px;
+  width: 175px;
+  height: 235px;
+}
+
+.collection-item__details {
+  height: 250px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .collection-item__details h3 {
-	font-family: Lora, serif;
-	font-style: italic;
-	font-weight: 700;
-	line-height: 31px;
-	margin-bottom: 10px;
+  font-family: Lora, serif;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 31px;
+  margin-bottom: 2%;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
 }
 
 .collection-item__author {
-	font-family: Roboto, sans-serif;
-	margin-bottom: 34px;
+  font-family: Roboto, sans-serif;
+  margin: 10% auto;
+  font-size: 1rem;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* height: 85px; */
+}
+
+.collection-item__rating {
+  padding: 5% 0;
 }
 
 .book-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .book-header img {
-	display: block;
-	width: 30%;
+  display: block;
+  width: 30%;
 }
 
 .book-header__details {
-	width: 60%;
+  width: 60%;
 }
 
 .book-header__details h1 {
-	font-family: Lora, serif;
-	font-style: italic;
-	font-weight: 700;
-	font-size: 2.5em;
+  font-family: Lora, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2.5em;
 }
 
 .book-header__details h2 {
-	font-family: Roboto, sans-serif;
-	font-size: 1.5rem;
+  font-family: Roboto, sans-serif;
+  font-size: 1.5rem;
 }
 
 .book-header__details button {
-	display: inline-block;
-	margin-top: 1rem;
-	margin-right: 1rem;
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 .page-container .book-header .book-header__details .button-wrapper {
-	display: flex;
+  display: flex;
 }
 
 .sign-in-button {
-	width: 126px;
+  width: 126px;
 }
 
 .reviews {
-	margin: 2rem auto 2rem;
+  margin: 2rem auto 2rem;
 }
 
 .review {
-  /* display: flex;
-  flex-direction: column; */
-  width: 100%;
-  min-height: 5rem;
   margin: 0 auto 2rem;
 }
 
 .reviewed-by {
-	display: block;
-	text-transform: uppercase;
-	font-weight: bold;
-	margin-top: 0.7rem;
-	font-size: 0.8rem;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .reviewer {
-  display: flex;
-  justify-content: space-between;
-  text-decoration: underline;
-  line-height: 15px;
+  display: block;
   font-family: Lora, serif;
   font-style: italic;
   font-size: 1rem;
-  margin-bottom: 0.25rem;
-  padding-top: 0.5rem;
-}
-
-.review-text {
-  margin-bottom: 1rem;
-}
-
-.fas,
-.far {
-  padding: 0 0.25rem 0 0.25rem;
-  margin-top: 0;
 }
 
 .modal-title {
-	width: 100%;
+  width: 100%;
 }
 
 .login-header {
-	background-color: #3040c4;
-	color: white;
+  background-color: #3040c4;
+  color: white;
 }
 
 .login-header img {
-	display: block;
-	margin: auto;
-	height: 65px;
+  display: block;
+  margin: auto;
+  height: 65px;
 }
 
 .modal-body {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .modal-form {
-	width: 48%;
-	padding: 20px;
+  width: 80%;
 }
 
 .modal-form button {
-	display: inline-block;
-	margin-top: 2rem;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 .modal-divider {
-	width: 1px;
-	background-color: lightgray;
+  width: 1px;
+  background-color: lightgray;
 }
 
 .modal-body div label {
-	display: block;
-	margin-top: 1rem;
+  display: block;
+  margin-top: 1rem;
 }
 
 .modal-body div input {
-	display: block;
-	width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .close {
-	color: white;
+  color: white;
 }
 
 /* AddReview CSS */
 
 .add-review-wrapper {
-	width: 1354px;
-	margin: 0 auto;
+  width: 1354px;
+  margin: 0 auto;
 }
 
 .review-form-wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 30rem;
-	width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30rem;
+  width: 100%;
 }
 
 .review-form-wrapper .review-form {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-	height: 25rem;
-	width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 25rem;
+  width: 100%;
 }
 
 .review-form-wrapper .review-form textarea {
   height: 100%;
-  width: 90%;
+  width: 100%;
   padding: 1rem;
 }
 
 .review-form-wrapper .review-form .form-button {
-	margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .title-wrapper {
-	display: flex;
-	margin: 2rem 0;
+  display: flex;
+  margin: 2rem 0;
 }
 
 .title-wrapper .title-author {
-	height: 100%;
-	width: 100%;
-	padding-left: 1rem;
+  height: 100%;
+  width: 100%;
+  padding-left: 1rem;
 }
